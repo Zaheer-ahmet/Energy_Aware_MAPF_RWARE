@@ -181,7 +181,7 @@ This will populate `Test_Results_Logs/` with all result files.
 - **Trained models:**  
   Located in `Models/`.
 - **Evaluation script:**
-  Evaluation AI.py contains all the visualization and analysis code for evaluating test scenarios. It includes plots and metrics to assess the impact of agent count, battery level, and obstacle density on performance.
+  `Evaluation AI.py/` contains all the visualization and analysis code for evaluating test scenarios. It includes plots and metrics to assess the impact of agent count, battery level, and obstacle density on performance.
 
 ---
 
