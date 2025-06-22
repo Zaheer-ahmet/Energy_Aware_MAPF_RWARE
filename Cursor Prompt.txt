@@ -1,0 +1,97 @@
+Prompt:
+So we are moving on, I have also gotten help from Chat GPT to help us in this process, there are some equations and variables you need to know, we will use these to train agents via RL:
+Equation (1) — Individual Reward Function:
+R_in(o_t_i, a_t_i) = ε_in_g(o_t_i, a_t_i) * R_in_g + ε_in_c(o_t_i, a_t_i) * R_in_c + ε_in_p(o_t_i, a_t_i) * R_in_p
+R_in(o_i, a_i) – individual reward received by agent i at time t
+ε_in_g(o_i, a_i) – indicator: 1 if agent i reached its goal at this step, else 0
+ε_in_c(o_i, a_i) – indicator: 1 if agent i collided with another agent or obstacle
+ε_in_p(o_i, a_i) – indicator: 1 if agent i moved or stayed without collision or goal
+R_in_g – reward for reaching goal (typically +10.0)
+R_in_c – penalty for collision (typically -10.0)
+R_in_p – step penalty (typically -0.1)
+
+Equation (2) — Team Reward Function:
+R_te(o_t, a_t) = ε_te_w(o_t, a_t) * R_te_w + n_te_g(o_t, a_t) * R_te_g + n_te_c(o_t, a_t) * R_te_c
+
+R_te(o, a) – scalar team reward at time t, shared across all agents
+ε_te_w(o, a) – indicator: 1 if all agents have reached their goals at current step
+n_te_g(o, a) – number of agents that reached their goals in this step
+n_te_c(o, a) – number of agents that collided this step
+R_te_w – team bonus when all agents reach their goal (typically +50.0)
+R_te_g – optional per-agent goal reward (typically 0.0)
+R_te_c – per-collision penalty (e.g., -1.0)
+
+Equation (3) — Individual Q-Function Loss:
+L_in_i = [ R_in_i + γ * max_{a_{t+1,i}} Q_in_i(o_{t+1,i}, a_{t+1,i}) - Q_in_i(o_{t,i}, a_{t,i}) ]²
+
+L_in_i – loss for agent i’s individual Q-network
+R_in_i – scalar reward from Equation (1)
+γ – discount factor (e.g., 0.99)
+Q_in_i(o_{t+1,i}, a_{t+1}) – next Q-value from individual Q-network
+Q_in_i(o_{t,i}, a_{t,i}) – current Q-value estimate
+a_{t+1} – future action, maximized over
+This is a standard TD loss used in DQN
+
+Equation (4) — Team Q-Function Loss:
+L_te = [ R_te + γ * max_{a_{t+1,i}} Σ_i Q_te_i(o_{t+1,i}, a_{t+1,i}) - Σ_i Q_te_i(o_{t,i}, a_{t,i}) ]²
+
+L_te – team loss applied to all agents jointly
+R_te – scalar reward from Equation (2)
+Σ_i – sum over all agents i
+Q_te_i(o_{t+1,i}, a_{t+1}) – team Q-value at next step
+Q_te_i(o_{t,i}, a_{t,i}) – team Q-value at current step
+Team Q-values are decomposed per-agent, trained jointly
+This enables cooperative learning through centralized training
+
+Equation (5) — Combined Q-Value for Action Selection:
+Q_comb_i(o_{t,i}, a_{t,i}) = (1 / (1 + β)) * Q_in_i(o_{t,i}, a_{t,i}) + (β / (1 + β)) * Q_te_i(o_{t,i}, a_{t,i})
+
+Q_comb_i(o_i, a_i) – combined Q-value used during action selection
+Q_in_i(o_i, a_i) – output from individual Q-network
+Q_te_i(o_i, a_i) – output from team Q-network
+β – mixing weight (e.g., 1, 2, or set relative to number of agents)
+Action chosen via:
+action_i = argmax_a Q_comb_i(o_i, a)
+
+Let me know when you have understood these
+
+Answer:Thank you for providing these equations and variable definitions. Here’s a summary of my understanding:
+
+---
+
+### **Equation (1): Individual Reward Function**
+- \( R_{in}(o_{t,i}, a_{t,i}) \) is the reward for agent \( i \) at time \( t \).
+- It is a sum of:
+  - \( \epsilon_{in,g} \): 1 if agent reached its goal, else 0 (multiplied by goal reward, e.g., +10.0)
+  - \( \epsilon_{in,c} \): 1 if agent collided, else 0 (multiplied by collision penalty, e.g., -10.0)
+  - \( \epsilon_{in,p} \): 1 if agent moved/stayed without collision/goal (multiplied by step penalty, e.g., -0.1)
+
+### **Equation (2): Team Reward Function**
+- \( R_{te}(o_t, a_t) \) is the scalar team reward at time \( t \).
+- It is a sum of:
+  - \( \epsilon_{te,w} \): 1 if all agents reached their goals (multiplied by team bonus, e.g., +50.0)
+  - \( n_{te,g} \): number of agents that reached their goals this step (multiplied by per-agent goal reward, usually 0.0)
+  - \( n_{te,c} \): number of agents that collided this step (multiplied by per-collision penalty, e.g., -1.0)
+
+### **Equation (3): Individual Q-Function Loss (DQN)**
+- Standard TD loss for each agent’s Q-network:
+  - \( L_{in,i} = [ R_{in,i} + \gamma \max_{a'} Q_{in,i}(o', a') - Q_{in,i}(o, a) ]^2 \)
+
+### **Equation (4): Team Q-Function Loss**
+- Team loss is the TD error for the sum of team Q-values across all agents:
+  - \( L_{te} = [ R_{te} + \gamma \max_{a'} \sum_i Q_{te,i}(o', a') - \sum_i Q_{te,i}(o, a) ]^2 \)
+
+### **Equation (5): Combined Q-Value for Action Selection**
+- For action selection, combine individual and team Q-values:
+  - \( Q_{comb,i}(o, a) = \frac{1}{1+\beta} Q_{in,i}(o, a) + \frac{\beta}{1+\beta} Q_{te,i}(o, a) \)
+  - \( \beta \) is a mixing weight (e.g., 1, 2, or relative to number of agents)
+  - Action is chosen as \( \arg\max_a Q_{comb,i}(o, a) \)
+
+---
+
+**I understand these equations and their role in RL for MAPF:**
+- You can train agents with both individual and team rewards.
+- You can use both individual and team Q-networks, and combine them for action selection.
+- The environment must provide the necessary reward signals and info for these losses.
+
+Let me know when you’re ready to proceed with RL integration, or if you want to discuss how to implement these losses, reward signals, or Q-networks in your codebase!

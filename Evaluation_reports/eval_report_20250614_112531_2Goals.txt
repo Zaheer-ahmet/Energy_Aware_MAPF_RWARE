@@ -1,0 +1,1301 @@
+
+Agent 0 Q-values:
+Individual Q: [269.82632 266.79553 267.81107 269.30057]
+Team Q: [-462.52026 -447.91937 -459.2983  -468.73154]
+Combined Q: [-96.34697  -90.56192  -95.74362  -99.715485]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [282.90735 283.23102 282.44025 280.20862]
+Team Q: [-399.86426 -408.07956 -402.63647 -392.213  ]
+Combined Q: [-58.478455 -62.42427  -60.098114 -56.002197]
+Selected action: RIGHT
+
+Step 0: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-0.05), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [45.573627 44.066555 45.345978 45.320072]
+Team Q: [-115.56207 -111.84458 -114.61321 -117.0494 ]
+Combined Q: [-34.994225 -33.889015 -34.633617 -35.864662]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [1.0848511 1.0793601 1.6921847 2.1902134]
+Team Q: [-11.461691  -11.8400345 -11.527645  -11.345154 ]
+Combined Q: [-5.18842   -5.380337  -4.9177303 -4.5774703]
+Selected action: NOOP
+
+Step 1: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [35.57918  35.665886 34.960747 33.316586]
+Team Q: [-109.52632 -105.92347 -108.57681 -110.8575 ]
+Combined Q: [-36.97357  -35.12879  -36.808033 -38.770454]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [4.8157973 4.303865  5.332028  6.18713  ]
+Team Q: [-9.338645 -9.647945 -9.3839   -9.271093]
+Combined Q: [-2.2614238 -2.6720402 -2.025936  -1.5419817]
+Selected action: RIGHT
+
+Step 2: Actions=['RIGHT', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [41.658184 41.026985 40.863873 41.21167 ]
+Team Q: [-106.291954 -102.77761  -105.411896 -107.56565 ]
+Combined Q: [-32.316887 -30.875313 -32.27401  -33.17699 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [12.699789 11.734676 12.9164   14.158671]
+Team Q: [-11.371944 -11.756745 -11.414347 -11.275699]
+Combined Q: [ 0.6639223  -0.01103449  0.75102663  1.4414864 ]
+Selected action: RIGHT
+
+Step 3: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [36.88081  36.37086  36.256714 36.155704]
+Team Q: [-97.91319 -94.67257 -97.0697  -99.07957]
+Combined Q: [-30.516191 -29.150854 -30.406494 -31.461931]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [31.612066 32.389854 31.260645 31.410881]
+Team Q: [-39.246353 -40.347046 -39.589657 -38.65259 ]
+Combined Q: [-3.8171434 -3.9785957 -4.164506  -3.6208553]
+Selected action: RIGHT
+
+Step 4: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [32.226994 31.570227 31.820868 32.12202 ]
+Team Q: [-87.90402  -84.98603  -87.13112  -88.945496]
+Combined Q: [-27.838514 -26.707901 -27.655125 -28.411737]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [47.57961  54.977505 45.39027  39.69488 ]
+Team Q: [-47.795265 -49.05152  -48.123447 -47.114334]
+Combined Q: [-0.10782814  2.9629917  -1.3665886  -3.7097263 ]
+Selected action: LEFT
+
+Step 5: Actions=['FORWARD', 'LEFT'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.817854 31.182747 31.427198 31.554096]
+Team Q: [-87.47934  -84.57742  -86.70422  -88.516945]
+Combined Q: [-27.830742 -26.697338 -27.638512 -28.481424]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.789875 20.124046 19.745567 20.113731]
+Team Q: [-23.056574 -23.776354 -23.26559  -22.759418]
+Combined Q: [-1.6333494 -1.8261538 -1.7600117 -1.3228436]
+Selected action: RIGHT
+
+Step 6: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.332197 30.619717 30.975603 31.256279]
+Team Q: [-86.64886 -83.77426 -85.88066 -87.68046]
+Combined Q: [-27.658329 -26.577272 -27.45253  -28.21209 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [34.189686 40.50605  32.3895   27.544373]
+Team Q: [-29.218956 -30.040632 -29.399675 -28.865719]
+Combined Q: [ 2.485365    5.232709    1.4949121  -0.66067314]
+Selected action: FORWARD
+
+Step 7: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.05)]
+
+Agent 0 Q-values:
+Individual Q: [29.523638 28.871195 29.218771 29.64739 ]
+Team Q: [-86.77562  -83.89969  -85.993675 -87.813896]
+Combined Q: [-28.625992 -27.514248 -28.387451 -29.083252]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [40.603123 42.60973  39.8985   38.261833]
+Team Q: [-28.51422  -29.452103 -28.790335 -28.079782]
+Combined Q: [6.0444517 6.5788136 5.554082  5.0910254]
+Selected action: FORWARD
+
+Step 8: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.05)]
+
+Agent 0 Q-values:
+Individual Q: [30.067585 29.459602 29.76511  30.346193]
+Team Q: [-83.945206 -81.161476 -83.19085  -84.94718 ]
+Combined Q: [-26.93881  -25.850937 -26.71287  -27.300495]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.6604   21.417542 19.092358 17.056885]
+Team Q: [-40.219788 -41.385036 -40.556435 -39.597023]
+Combined Q: [-10.279694   -9.9837475 -10.7320385 -11.270069 ]
+Selected action: FORWARD
+
+Step 9: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [30.746143 30.163342 30.432388 31.11277 ]
+Team Q: [-81.946846 -79.22823  -81.211914 -82.9239  ]
+Combined Q: [-25.600351 -24.532446 -25.389763 -25.905563]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [17.824139 19.497677 17.295444 15.357404]
+Team Q: [-35.926437 -36.994278 -36.22977  -35.38384 ]
+Combined Q: [ -9.051149  -8.748301  -9.467163 -10.013218]
+Selected action: NOOP
+
+Step 10: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [31.428192 30.865658 31.103231 31.854168]
+Team Q: [-80.47111 -77.80055 -79.75041 -81.43033]
+Combined Q: [-24.521458 -23.467447 -24.32359  -24.78808 ]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [16.487589 18.104496 15.988348 14.121428]
+Team Q: [-32.90973  -33.909325 -33.189297 -32.422935]
+Combined Q: [-8.21107   -7.9024143 -8.600474  -9.150754 ]
+Selected action: FORWARD
+
+Step 11: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [32.835133 32.79124  32.764267 31.781487]
+Team Q: [-93.35826  -90.33138  -92.500435 -94.5256  ]
+Combined Q: [-30.261564 -28.770071 -29.868084 -31.372055]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [15.024578 16.535458 14.56617  12.825099]
+Team Q: [-30.68897  -31.63989  -30.953592 -30.244192]
+Combined Q: [-7.832196  -7.5522165 -8.193711  -8.709547 ]
+Selected action: FORWARD
+
+Step 12: Actions=['RIGHT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [33.540936 32.98471  33.19029  34.13056 ]
+Team Q: [-79.31891  -76.683754 -78.61293  -80.26524 ]
+Combined Q: [-22.888987 -21.849522 -22.71132  -23.06734 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [14.2682705 15.751241  13.827579  12.123413 ]
+Team Q: [-29.013765 -29.926039 -29.265549 -28.599903]
+Combined Q: [-7.3727474 -7.087399  -7.718985  -8.238245 ]
+Selected action: RIGHT
+
+Step 13: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [34.133854 33.64464  33.746716 34.657696]
+Team Q: [-78.55016 -75.94184 -77.85445 -79.48667]
+Combined Q: [-22.208155 -21.1486   -22.053865 -22.414488]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [21.084692 21.51288  20.914295 20.010666]
+Team Q: [-33.426342 -34.296394 -33.665825 -32.90232 ]
+Combined Q: [-6.170825  -6.391757  -6.375765  -6.4458275]
+Selected action: NOOP
+
+Step 14: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [34.663773 34.231678 34.244793 35.1316  ]
+Team Q: [-77.91673  -75.330605 -77.229675 -78.84524 ]
+Combined Q: [-21.62648  -20.549463 -21.492441 -21.85682 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.898869 20.322603 19.732924 18.838036]
+Team Q: [-31.063614 -31.89089  -31.291748 -30.58767 ]
+Combined Q: [-5.5823727 -5.7841434 -5.7794123 -5.874817 ]
+Selected action: NOOP
+
+Step 15: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [35.1438   34.76107  34.696644 35.56332 ]
+Team Q: [-77.3891  -74.82168 -76.70943 -78.311  ]
+Combined Q: [-21.12265  -20.030304 -21.006392 -21.373838]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.970514 19.396313 18.807608 17.913246]
+Team Q: [-29.265646 -30.060587 -29.484715 -28.825489]
+Combined Q: [-5.147566  -5.332137  -5.3385534 -5.4561214]
+Selected action: NOOP
+
+Step 16: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [35.578903 35.239437 35.106655 35.956116]
+Team Q: [-76.94511  -74.393654 -76.27179  -77.86149 ]
+Combined Q: [-20.683102 -19.577108 -20.582567 -20.952686]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.21553  18.644577 18.053783 17.161928]
+Team Q: [-27.850882 -28.619741 -28.06221  -27.438627]
+Combined Q: [-4.8176756 -4.987582  -5.0042133 -5.1383495]
+Selected action: LEFT
+
+Step 17: Actions=['FORWARD', 'LEFT'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [35.814655 35.471905 35.342037 36.232162]
+Team Q: [-76.510605 -73.97376  -75.84126  -77.42219 ]
+Combined Q: [-20.347975 -19.250929 -20.249613 -20.595013]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [13.547506 15.282075 13.105551 11.228874]
+Team Q: [-29.520834 -30.444647 -29.775593 -29.102709]
+Combined Q: [-7.986664 -7.581286 -8.335021 -8.936917]
+Selected action: FORWARD
+
+Step 18: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [36.033974 35.6878   35.561176 36.48828 ]
+Team Q: [-76.13313  -73.60899  -75.467285 -77.04059 ]
+Combined Q: [-20.04958  -18.960596 -19.953054 -20.276154]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [13.082739 14.775119 12.653662 10.819274]
+Team Q: [-28.324389 -29.220646 -28.570736 -27.929682]
+Combined Q: [-7.620825  -7.2227635 -7.958537  -8.555204 ]
+Selected action: FORWARD
+
+Step 19: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [36.2458   35.897606 35.77206  36.730076]
+Team Q: [-75.80255 -73.28957 -75.13978 -76.70643]
+Combined Q: [-19.778376 -18.695984 -19.683859 -19.988176]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [12.6918335 14.349002  12.273913  10.47487  ]
+Team Q: [-27.344206 -28.21807  -27.584167 -26.968859]
+Combined Q: [-7.326186  -6.9345336 -7.655127  -8.246994 ]
+Selected action: FORWARD
+
+Step 20: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [31.679302 31.454275 31.671377 31.086786]
+Team Q: [-85.97639 -83.1986  -85.19578 -87.04502]
+Combined Q: [-27.148542 -25.872162 -26.7622   -27.979118]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [12.108721  13.698658  11.7111635  9.984813 ]
+Team Q: [-26.524546 -27.37988  -26.759403 -26.164951]
+Combined Q: [-7.2079124 -6.8406115 -7.52412   -8.090069 ]
+Selected action: FORWARD
+
+Step 21: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [63.71722  60.740913 64.170815 66.65175 ]
+Team Q: [-168.61348 -163.2694  -167.30727 -170.87303]
+Combined Q: [-52.448128 -51.26424  -51.568226 -52.11064 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [12.076883 13.633444 11.676584  9.991134]
+Team Q: [-25.347765 -26.176798 -25.575207 -25.010727]
+Combined Q: [-6.635441  -6.271677  -6.9493113 -7.5097966]
+Selected action: FORWARD
+
+Step 22: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [59.444958 56.4682   59.942295 62.568897]
+Team Q: [-151.646   -146.84827 -150.44035 -153.60916]
+Combined Q: [-46.100517 -45.190033 -45.24903  -45.520134]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [12.659931 14.213407 12.243413 10.581838]
+Team Q: [-24.038826 -24.835297 -24.256065 -23.72486 ]
+Combined Q: [-5.6894474 -5.310945  -6.006326  -6.571511 ]
+Selected action: FORWARD
+
+Step 23: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [ 9.278266  8.228037 10.058607 10.019153]
+Team Q: [-54.322525 -52.573784 -53.792725 -54.893147]
+Combined Q: [-22.52213  -22.172874 -21.867058 -22.436996]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [14.4062195 15.985647  13.948852  12.283388 ]
+Team Q: [-23.21184  -23.984903 -23.421322 -22.90994 ]
+Combined Q: [-4.40281   -3.999628  -4.736235  -5.3132763]
+Selected action: FORWARD
+
+Step 24: Actions=['RIGHT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [22.294575 21.496181 22.204348 23.098774]
+Team Q: [-48.723316 -47.09424  -48.24686  -49.20883 ]
+Combined Q: [-13.214371 -12.799028 -13.021256 -13.055029]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [15.631353 17.248367 15.14347  13.455306]
+Team Q: [-22.664587 -23.421766 -22.868065 -22.370844]
+Combined Q: [-3.5166168 -3.0866995 -3.8622975 -4.457769 ]
+Selected action: FORWARD
+
+Step 25: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [23.351032 22.698042 23.16855  24.035011]
+Team Q: [-47.748783 -46.15308  -47.278057 -48.22323 ]
+Combined Q: [-12.198875 -11.727519 -12.054753 -12.094109]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [16.503574 18.146118 15.995243 14.292426]
+Team Q: [-22.261724 -23.006084 -22.459686 -21.97344 ]
+Combined Q: [-2.879075  -2.4299831 -3.2322216 -3.840507 ]
+Selected action: FORWARD
+
+Step 26: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [24.031216 23.473785 23.786991 24.66936 ]
+Team Q: [-47.1257   -45.551205 -46.658077 -47.59284 ]
+Combined Q: [-11.547243 -11.03871  -11.435543 -11.46174 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [17.184196 18.84534  16.660948 14.948195]
+Team Q: [-21.94896  -22.682356 -22.141499 -21.66487 ]
+Combined Q: [-2.3823814 -1.9185076 -2.7402754 -3.358337 ]
+Selected action: FORWARD
+
+Step 27: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [24.444426 23.932446 24.157595 25.066168]
+Team Q: [-46.688198 -45.128147 -46.22214  -47.14962 ]
+Combined Q: [-11.121886 -10.597851 -11.032273 -11.041726]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [17.744555 19.42003  17.20968  15.489793]
+Team Q: [-21.695004 -22.419077 -21.882835 -21.414364]
+Combined Q: [-1.9752245 -1.4995232 -2.3365774 -2.9622855]
+Selected action: FORWARD
+
+Step 28: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [24.74987  24.259872 24.44438  25.36394 ]
+Team Q: [-46.378086 -44.828648 -45.913227 -46.83624 ]
+Combined Q: [-10.814108 -10.284388 -10.734424 -10.73615 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.216219 19.903233 17.67199  15.946546]
+Team Q: [-21.472164 -22.188044 -21.655907 -21.19467 ]
+Combined Q: [-1.6279726 -1.1424055 -1.9919586 -2.624062 ]
+Selected action: FORWARD
+
+Step 29: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [25.038078 24.569515 24.716383 25.643316]
+Team Q: [-46.1469   -44.605392 -45.68316  -46.602654]
+Combined Q: [-10.554411 -10.017939 -10.483388 -10.479669]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.616644 20.315063 18.064806 16.334213]
+Team Q: [-21.279112 -21.987883 -21.459179 -21.004324]
+Combined Q: [-1.331234   -0.83640957 -1.6971865  -2.3350554 ]
+Selected action: FORWARD
+
+Step 30: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [25.312515 24.861824 24.97606  25.91008 ]
+Team Q: [-45.972122 -44.43639  -45.509125 -46.425926]
+Combined Q: [-10.329803  -9.787283 -10.266532 -10.257923]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.96437  20.671854 18.405958 16.672518]
+Team Q: [-21.126356 -21.829123 -21.303253 -20.853333]
+Combined Q: [-1.0809927  -0.57863426 -1.4486475  -2.0904074 ]
+Selected action: FORWARD
+
+Step 31: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [25.576374 25.139679 25.22751  26.167868]
+Team Q: [-45.83279 -44.30167 -45.37038 -46.28507]
+Combined Q: [-10.128208  -9.580996 -10.071435 -10.0586  ]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [19.274195 20.989492 18.710094 16.974464]
+Team Q: [-20.99947  -21.697056 -21.173586 -20.727564]
+Combined Q: [-0.8626375 -0.3537817 -1.2317457 -1.8765497]
+Selected action: FORWARD
+
+Step 32: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [17.479462 16.458517 17.837378 18.18775 ]
+Team Q: [-56.777416 -54.9558   -56.20139  -57.399822]
+Combined Q: [-19.648977 -19.248642 -19.182007 -19.606037]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [19.387909 21.084934 18.825289 17.116316]
+Team Q: [-20.854708 -21.547163 -21.026491 -20.58427 ]
+Combined Q: [-0.7333994  -0.23111439 -1.1006012  -1.7339773 ]
+Selected action: FORWARD
+
+Step 33: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [20.806097 22.461388 19.93279  17.066586]
+Team Q: [-49.831184 -48.280502 -49.4031   -50.36349 ]
+Combined Q: [-14.512544 -12.909557 -14.735154 -16.648453]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.388203 21.032982 18.833029 17.175766]
+Team Q: [-20.28264  -20.959837 -20.449604 -20.021887]
+Combined Q: [-0.4472189   0.03657246 -0.8082876  -1.4230604 ]
+Selected action: FORWARD
+
+Step 34: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [137.83318 139.31882 134.83633 134.89153]
+Team Q: [-140.46349 -135.94609 -139.46599 -142.10786]
+Combined Q: [-1.315155   1.6863632 -2.314827  -3.6081696]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.692644 20.28429  18.150476 16.553074]
+Team Q: [-19.38624  -20.038736 -19.542315 -19.13992 ]
+Combined Q: [-0.34679794  0.12277699 -0.69591904 -1.2934227 ]
+Selected action: FORWARD
+
+Step 35: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [118.4707   123.63452  115.23726  114.916565]
+Team Q: [-104.63754  -101.32278  -103.84071  -105.753265]
+Combined Q: [ 6.91658   11.155872   5.6982727  4.58165  ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.274513 20.797195 18.721481 17.17045 ]
+Team Q: [-19.169374 -19.81696  -19.323582 -18.924623]
+Combined Q: [ 0.05256939  0.49011803 -0.3010502  -0.87708664]
+Selected action: FORWARD
+
+Step 36: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [68.72034  74.284645 66.42091  64.33993 ]
+Team Q: [-62.067894 -60.13127  -61.578537 -62.68762 ]
+Combined Q: [3.3262215 7.076687  2.4211884 0.8261547]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.725967 21.206837 19.165087 17.644745]
+Team Q: [-19.070005 -19.712967 -19.221647 -18.824278]
+Combined Q: [ 0.327981    0.7469349  -0.02828026 -0.5897665 ]
+Selected action: FORWARD
+
+Step 37: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [24.424599 30.819666 22.782187 18.786646]
+Team Q: [-51.468727 -49.882042 -51.05747  -51.93503 ]
+Combined Q: [-13.522064  -9.531188 -14.137641 -16.574192]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [20.007618 21.45697  19.449118 17.963306]
+Team Q: [-18.868849 -19.506596 -19.018822 -18.625633]
+Combined Q: [ 0.5693846   0.9751873   0.21514797 -0.3311634 ]
+Selected action: FORWARD
+
+Step 38: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [82.44357  84.96241  80.36807  78.244835]
+Team Q: [-96.2316   -93.160934 -95.5858   -97.323685]
+Combined Q: [-6.8940125 -4.099262  -7.608864  -9.539425 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.784103 21.208416 19.232155 17.778221]
+Team Q: [-18.500198 -19.127539 -18.645695 -18.262505]
+Combined Q: [ 0.6419525   1.0404387   0.29323006 -0.24214172]
+Selected action: FORWARD
+
+Step 39: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [79.0047  82.5893  76.43503 74.87166]
+Team Q: [-84.480064 -81.81376  -83.881424 -85.34675 ]
+Combined Q: [-2.7376823  0.3877716 -3.723198  -5.237545 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.782974 21.181213 19.237715 17.814728]
+Team Q: [-18.260628 -18.881506 -18.403114 -18.025833]
+Combined Q: [ 0.76117325  1.1498537   0.41730022 -0.10555267]
+Selected action: FORWARD
+
+Step 40: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [42.459858 47.658554 40.745434 38.30523 ]
+Team Q: [-49.687023 -48.14974  -49.32558  -50.150715]
+Combined Q: [-3.6135826  -0.24559212 -4.2900734  -5.922743  ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.986012 21.364847 19.44408  18.045124]
+Team Q: [-18.217367 -18.835302 -18.357698 -17.981195]
+Combined Q: [0.88432217 1.2647724  0.54319096 0.0319643 ]
+Selected action: FORWARD
+
+Step 41: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [5.9924855 9.650137  5.781733  3.2508616]
+Team Q: [-23.31795  -22.610746 -23.115234 -23.426653]
+Combined Q: [ -8.662732   -6.4803047  -8.666751  -10.087895 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [20.258226 21.620426 19.718489 18.340868]
+Team Q: [-18.253168 -18.871069 -18.392914 -18.015226]
+Combined Q: [1.0025291  1.3746786  0.66278744 0.16282082]
+Selected action: FORWARD
+
+Step 42: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [14.866706 14.594208 15.407841 13.847948]
+Team Q: [-19.425001 -18.8588   -19.274323 -19.539202]
+Combined Q: [-2.2791476 -2.1322966 -1.9332409 -2.8456268]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [20.267235 21.615665 19.72912  18.37149 ]
+Team Q: [-18.207317 -18.822771 -18.345448 -17.969326]
+Combined Q: [1.0299587  1.3964472  0.69183636 0.20108223]
+Selected action: FORWARD
+
+Step 43: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [70.10475  69.356895 70.343185 73.049614]
+Team Q: [-132.06927 -128.04756 -131.31117 -133.69618]
+Combined Q: [-30.982262 -29.345333 -30.483994 -30.323284]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.939087 21.284832 19.401604 18.04924 ]
+Team Q: [-17.900646 -18.508276 -18.036224 -17.66803 ]
+Combined Q: [1.0192204  1.388278   0.68268967 0.19060516]
+Selected action: FORWARD
+
+Step 44: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [69.439896 69.27096  69.38974  71.35797 ]
+Team Q: [-108.78877 -105.50196 -108.17661 -110.11564]
+Combined Q: [-19.674438 -18.115501 -19.393436 -19.378834]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [19.600685 20.94067  19.065802 17.719713]
+Team Q: [-17.696594 -18.299057 -17.830544 -17.467653]
+Combined Q: [0.95204544 1.3208065  0.61762905 0.12602997]
+Selected action: FORWARD
+
+Step 45: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [62.354218 62.29447  62.296963 63.963856]
+Team Q: [-93.96962  -91.131996 -93.43536  -95.09296 ]
+Combined Q: [-15.807701  -14.418762  -15.5692005 -15.56455  ]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [19.30363  20.637115 18.771612 17.432673]
+Team Q: [-17.557451 -18.156414 -17.690502 -17.331146]
+Combined Q: [0.8730898  1.2403507  0.540555   0.05076313]
+Selected action: FORWARD
+
+Step 46: Actions=['RIGHT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [21.028358 20.768425 21.306839 19.903545]
+Team Q: [-16.447735 -15.97329  -16.299711 -16.521057]
+Combined Q: [2.2903118 2.3975673 2.503564  1.6912441]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [19.240887 20.556477 18.713778 17.396397]
+Team Q: [-17.524603 -18.121943 -17.656681 -17.298323]
+Combined Q: [0.8581419  1.217267   0.52854824 0.04903698]
+Selected action: FORWARD
+
+Step 47: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [57.538166 57.490417 57.476116 59.035843]
+Team Q: [-84.865685 -82.30212  -84.37571  -85.86505 ]
+Combined Q: [-13.663759 -12.405849 -13.449797 -13.414604]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [18.982452 20.290981 18.45953  17.151089]
+Team Q: [-17.426619 -18.021288 -17.558182 -17.202227]
+Combined Q: [ 0.7779169   1.1348467   0.45067406 -0.02556896]
+Selected action: FORWARD
+
+Step 48: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [12.096409  10.882094  12.4464245 13.707953 ]
+Team Q: [-21.322096 -20.540327 -21.058096 -21.416668]
+Combined Q: [-4.6128435 -4.8291163 -4.3058357 -3.8543572]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [19.023441 20.3409   18.500551 17.187286]
+Team Q: [-17.58271  -18.180132 -17.714468 -17.35508 ]
+Combined Q: [ 0.7203655   1.0803843   0.3930416  -0.08389664]
+Selected action: FORWARD
+
+Step 49: Actions=['RIGHT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [54.035393 54.007008 53.97134  55.431267]
+Team Q: [-78.3479  -75.9809  -77.88869 -79.25834]
+Combined Q: [-12.156254  -10.986948  -11.9586735 -11.913536 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.797821 20.112415 18.280764 16.97371 ]
+Team Q: [-17.51262  -18.107935 -17.644081 -17.286299]
+Combined Q: [ 0.64260006  1.0022402   0.31834126 -0.15629482]
+Selected action: FORWARD
+
+Step 50: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [50.704197 50.716076 50.63738  51.972485]
+Team Q: [-71.97332  -69.79902  -71.545044 -72.79685 ]
+Combined Q: [-10.634562   -9.5414715 -10.453833  -10.412184 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.594406 19.906292 18.0828   16.781773]
+Team Q: [-17.467226 -18.06101  -17.59856  -17.241804]
+Combined Q: [ 0.56359005  0.9226408   0.24211979 -0.23001575]
+Selected action: FORWARD
+
+Step 51: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [47.955593 47.997097 47.886086 49.123695]
+Team Q: [-66.83115  -64.81155  -66.427895 -67.5846  ]
+Combined Q: [-9.437777  -8.407225  -9.270905  -9.2304535]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.412388 19.722338 17.9057   16.609844]
+Team Q: [-17.438423 -18.03108  -17.569746 -17.213629]
+Combined Q: [ 0.48698235  0.84562874  0.16797733 -0.30189228]
+Selected action: FORWARD
+
+Step 52: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [45.636707 45.698368 45.56561  46.72807 ]
+Team Q: [-62.592056 -60.700096 -62.209385 -63.28878 ]
+Combined Q: [-8.4776745 -7.500864  -8.321888  -8.280355 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.251778 19.561485 17.749943 16.458523]
+Team Q: [-17.431187 -18.023157 -17.562672 -17.206644]
+Combined Q: [ 0.4102955   0.7691641   0.09363556 -0.37406063]
+Selected action: FORWARD
+
+Step 53: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [43.65975  43.735764 43.58804  44.68952 ]
+Team Q: [-59.040493 -57.2551   -58.674877 -59.68937 ]
+Combined Q: [-7.6903706 -6.7596684 -7.543419  -7.4999237]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [18.104794 19.414703 17.608051 16.321436]
+Team Q: [-17.43453  -18.026068 -17.566246 -17.210047]
+Combined Q: [ 0.33513165  0.6943178   0.02090263 -0.44430542]
+Selected action: FORWARD
+
+Step 54: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [41.94154  42.027443 41.86932  42.92127 ]
+Team Q: [-56.039173 -54.34431  -55.68867  -56.648052]
+Combined Q: [-7.0488167 -6.158434  -6.9096756 -6.863392 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [17.968987 19.279083 17.47709  16.195063]
+Team Q: [-17.444475 -18.035734 -17.576454 -17.21992 ]
+Combined Q: [ 0.26225567  0.62167454 -0.04968166 -0.5124283 ]
+Selected action: LEFT
+
+Step 55: Actions=['FORWARD', 'LEFT'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [38.896282 39.03579  38.824036 39.729527]
+Team Q: [-50.431335 -48.906075 -50.109455 -50.964558]
+Combined Q: [-5.7675266 -4.9351425 -5.6427097 -5.6175156]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [49.622986 50.567776 48.987747 48.577396]
+Team Q: [-56.758755 -58.097427 -57.09315  -55.76039 ]
+Combined Q: [-3.5678844 -3.7648258 -4.052702  -3.5914974]
+Selected action: NOOP
+
+Step 56: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [36.467068 36.646606 36.39474  37.184464]
+Team Q: [-46.095856 -44.70187  -45.797153 -46.57129 ]
+Combined Q: [-4.814394  -4.0276318 -4.701206  -4.693413 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [47.317062 48.242588 46.693657 46.277515]
+Team Q: [-52.045113 -53.288673 -52.353745 -51.13819 ]
+Combined Q: [-2.364025  -2.5230427 -2.8300438 -2.430338 ]
+Selected action: NOOP
+
+Step 57: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [34.481525 34.686672 34.413296 35.11114 ]
+Team Q: [-42.684547 -41.393677 -42.403416 -43.11375 ]
+Combined Q: [-4.101511  -3.3535023 -3.99506   -4.0013046]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [45.429092 46.337196 44.816402 44.397415]
+Team Q: [-48.257824 -49.425266 -48.545208 -47.423546]
+Combined Q: [-1.4143658 -1.544035  -1.8644028 -1.5130653]
+Selected action: NOOP
+
+Step 58: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [32.816143 33.039776 32.752506 33.37511 ]
+Team Q: [-39.911995 -38.704437 -39.64496  -40.30339 ]
+Combined Q: [-3.547926  -2.8323307 -3.4462261 -3.46414  ]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [43.810944 44.699062 43.209846 42.794495]
+Team Q: [-45.179947 -46.285084 -45.449642 -44.404404]
+Combined Q: [-0.68450165 -0.7930107  -1.1198978  -0.8049545 ]
+Selected action: FORWARD
+
+Step 59: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.05)]
+
+Agent 0 Q-values:
+Individual Q: [17.007965 15.966709 17.224123 18.391935]
+Team Q: [-25.623755 -24.690527 -25.30659  -25.770725]
+Combined Q: [-4.3078947 -4.361909  -4.041233  -3.689395 ]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [45.08214  45.8329   44.50238  44.063274]
+Team Q: [-45.16513  -46.224926 -45.40903  -44.370033]
+Combined Q: [-0.04149437 -0.1960125  -0.45332527 -0.15337944]
+Selected action: NOOP
+
+Step 60: Actions=['RIGHT', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [30.880148 31.101227 30.829693 31.370956]
+Team Q: [-37.034264 -35.91305  -36.78133  -37.386265]
+Combined Q: [-3.0770578 -2.4059124 -2.9758186 -3.0076542]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [43.59262  44.313572 43.027977 42.5927  ]
+Team Q: [-42.817696 -43.830433 -43.047443 -42.0673  ]
+Combined Q: [ 0.38746262  0.24156952 -0.0097332   0.26270103]
+Selected action: NOOP
+
+Step 61: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [40.01496  40.523067 39.736065 40.143867]
+Team Q: [-34.138317 -33.126118 -33.914993 -34.453175]
+Combined Q: [2.938322  3.698475  2.9105358 2.8453465]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [42.309982 43.00823  41.75779  41.326427]
+Team Q: [-40.81162  -41.78425  -41.029438 -40.099564]
+Combined Q: [0.74918175 0.61199    0.3641758  0.61343193]
+Selected action: NOOP
+
+Step 62: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [38.86411  39.370083 38.589085 38.959473]
+Team Q: [-32.6562   -31.688118 -32.43945  -32.950047]
+Combined Q: [3.1039543 3.8409824 3.0748177 3.004713 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [41.17471  41.852497 40.633804 40.206234]
+Team Q: [-39.085655 -40.02384  -39.29327  -38.406616]
+Combined Q: [1.044527  0.9143276 0.6702671 0.8998089]
+Selected action: NOOP
+
+Step 63: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [37.833042 38.33647  37.561703 37.89929 ]
+Team Q: [-31.380985 -30.450686 -31.16981  -31.656694]
+Combined Q: [3.2260284 3.942893  3.1959467 3.121297 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [40.160713 40.81989  39.63013  39.206226]
+Team Q: [-37.600494 -38.50899  -37.799442 -36.949898]
+Combined Q: [1.2801094  1.1554489  0.91534424 1.1281643 ]
+Selected action: NOOP
+
+Step 64: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [36.902103 37.40264  36.63429  36.942924]
+Team Q: [-30.279116 -29.38123  -30.072718 -30.539122]
+Combined Q: [3.3114939 4.010706  3.2807856 3.2019014]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [39.247917 39.89002  38.726837 38.306484]
+Team Q: [-36.31434  -37.197273 -36.50619  -35.68853 ]
+Combined Q: [1.4667892 1.3463726 1.110323  1.3089771]
+Selected action: NOOP
+
+Step 65: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [36.055893 36.553272 35.791454 36.07438 ]
+Team Q: [-29.313007 -28.443499 -29.110752 -29.559282]
+Combined Q: [3.3714428 4.054887  3.340351  3.2575483]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [38.418884 39.045444 37.90644  37.48916 ]
+Team Q: [-35.190926 -36.051567 -35.37676  -34.586845]
+Combined Q: [1.6139793 1.4969387 1.2648411 1.4511566]
+Selected action: NOOP
+
+Step 66: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [35.282124 35.77614  35.020927 35.280907]
+Team Q: [-28.461061 -27.61644  -28.262411 -28.695387]
+Combined Q: [3.410531  4.0798492 3.3792582 3.29276  ]
+Selected action: NOOP
+
+Agent 1 Q-values:
+Individual Q: [37.661034 38.273403 37.15645  36.74174 ]
+Team Q: [-34.201904 -35.04303  -34.38243  -33.616844]
+Combined Q: [1.7295647 1.6151867 1.3870087 1.5624485]
+Selected action: NOOP
+
+Step 67: Actions=['NOOP', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [34.57053  35.060265 34.312763 34.551598]
+Team Q: [-27.706089 -26.883476 -27.51064  -27.929895]
+Combined Q: [3.4322205 4.088394  3.401062  3.310851 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [36.966278 37.56538  36.469048 36.056896]
+Team Q: [-33.32778  -34.15177  -33.503613 -32.75943 ]
+Combined Q: [1.8192482 1.7068043 1.4827175 1.6487331]
+Selected action: NOOP
+
+Step 68: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [33.913265 34.398415 33.65888  33.878483]
+Team Q: [-27.0342   -26.231155 -26.841564 -27.24867 ]
+Combined Q: [3.4395323 4.0836296 3.408657  3.3149061]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [36.32633 36.91296 35.83603 35.42638]
+Team Q: [-32.55661  -33.365555 -32.728386 -32.003113]
+Combined Q: [1.8848591 1.7737026 1.5538216 1.7116337]
+Selected action: NOOP
+
+Step 69: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [33.299435 33.77973  33.04851  33.250877]
+Team Q: [-26.43466  -25.649075 -26.244516 -26.640835]
+Combined Q: [3.4323874 4.0653286 3.4019976 3.3050213]
+Selected action: NOOP
+
+Agent 1 Q-values:
+Individual Q: [35.734333 36.309216 35.250587 34.84341 ]
+Team Q: [-31.863535 -32.658974 -32.031677 -31.32339 ]
+Combined Q: [1.935399  1.8251209 1.6094551 1.7600107]
+Selected action: NOOP
+
+Step 70: Actions=['NOOP', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [32.720985 33.19603  32.47375  32.66072 ]
+Team Q: [-25.898664 -25.12871  -25.710737 -26.097464]
+Combined Q: [3.4111605 4.03366   3.381507  3.2816286]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [35.184715 35.74846  34.707165 34.30242 ]
+Team Q: [-31.238325 -32.021606 -31.403229 -30.710268]
+Combined Q: [1.9731951 1.8634262 1.651968  1.7960768]
+Selected action: FORWARD
+
+Step 71: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(-0.05)]
+
+Agent 0 Q-values:
+Individual Q: [32.09093  32.55798  31.849209 32.02254 ]
+Team Q: [-25.417158 -24.661114 -25.231134 -25.609417]
+Combined Q: [3.3368864 3.948433  3.3090372 3.206562 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [29.366606 29.445404 29.008429 28.709984]
+Team Q: [-32.93853  -33.71319  -33.097065 -32.365288]
+Combined Q: [-1.7859621 -2.133892  -2.0443182 -1.827652 ]
+Selected action: NOOP
+
+Step 72: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.05), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [34.7495   35.13604  34.521206 34.751785]
+Team Q: [-25.916046 -25.162117 -25.74445  -26.116993]
+Combined Q: [4.416727  4.9869614 4.388378  4.317396 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [29.106327 29.195976 28.747244 28.45443 ]
+Team Q: [-32.30143  -33.065437 -32.457203 -31.740778]
+Combined Q: [-1.5975513 -1.9347305 -1.8549795 -1.6431742]
+Selected action: NOOP
+
+Step 73: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [34.33536  34.733337 34.103634 34.315186]
+Team Q: [-25.466513 -24.725227 -25.295858 -25.660925]
+Combined Q: [4.4344244 5.004055  4.4038877 4.3271303]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.864416 28.96512  28.504227 28.215202]
+Team Q: [-31.723513 -32.477913 -31.876816 -31.174358]
+Combined Q: [-1.4295483 -1.7563963 -1.6862946 -1.479578 ]
+Selected action: NOOP
+
+Step 74: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [33.94669  34.35498  33.711857 33.905872]
+Team Q: [-25.057196 -24.327404 -24.88736  -25.245663]
+Combined Q: [4.444747  5.013788  4.4122486 4.330105 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.639544 28.751036 28.277426 27.991486]
+Team Q: [-31.195847 -31.941505 -31.346924 -30.657213]
+Combined Q: [-1.2781515 -1.5952349 -1.534749  -1.3328638]
+Selected action: NOOP
+
+Step 75: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [33.58108  33.9987   33.343422 33.521236]
+Team Q: [-24.690697 -23.971134 -24.521631 -24.873913]
+Combined Q: [4.4451923 5.0137825 4.4108953 4.323662 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.428764 28.550106 28.063887 27.780813]
+Team Q: [-30.716599 -31.454428 -30.865728 -30.187551]
+Combined Q: [-1.1439171 -1.4521608 -1.4009209 -1.2033691]
+Selected action: NOOP
+
+Step 76: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [33.23641 33.6625  32.99618 33.15899]
+Team Q: [-24.36029  -23.649906 -24.191933 -24.538818]
+Combined Q: [4.438059  5.006296  4.4021244 4.3100853]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.22923  28.357737 27.861223 27.580538]
+Team Q: [-30.281723 -31.012592 -30.429195 -29.761501]
+Combined Q: [-1.0262461 -1.3274279 -1.2839861 -1.0904818]
+Selected action: NOOP
+
+Step 77: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [32.91086  33.344692 32.66824  32.817123]
+Team Q: [-24.057968 -23.355959 -23.890226 -24.23222 ]
+Combined Q: [4.426445  4.9943666 4.3890066 4.292452 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.041586 28.174133 27.669752 27.390873]
+Team Q: [-29.881956 -30.606436 -30.027918 -29.369856]
+Combined Q: [-0.9201851  -1.2161512  -1.1790829  -0.98949146]
+Selected action: RIGHT
+
+Step 78: Actions=['FORWARD', 'RIGHT'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [32.797638 33.23857  32.550877 32.709576]
+Team Q: [-24.03286  -23.330994 -23.864782 -24.207033]
+Combined Q: [4.382389  4.9537888 4.343047  4.2512712]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [17.769009 19.563444 17.184626 15.414932]
+Team Q: [-24.311464 -25.009684 -24.49467  -23.946184]
+Combined Q: [-3.2712278 -2.7231197 -3.6550226 -4.265626 ]
+Selected action: FORWARD
+
+Step 79: Actions=['LEFT', 'FORWARD'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [28.158382 27.066246 28.216482 29.495115]
+Team Q: [-35.664017 -34.429157 -35.276676 -35.95748 ]
+Combined Q: [-3.7528172 -3.6814556 -3.530097  -3.231183 ]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [17.872108 19.67012  17.286646 15.518937]
+Team Q: [-24.261713 -24.959492 -24.444626 -23.897535]
+Combined Q: [-3.1948023 -2.6446857 -3.57899   -4.189299 ]
+Selected action: RIGHT
+
+Step 80: Actions=['RIGHT', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [32.84343  33.29686  32.590057 32.763145]
+Team Q: [-24.217295 -23.509216 -24.047789 -24.394464]
+Combined Q: [4.3130674 4.8938217 4.2711344 4.1843405]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [36.624535 36.673527 36.755043 35.5671  ]
+Team Q: [-63.88775 -65.2144  -64.27309 -62.74256]
+Combined Q: [-13.631607 -14.270437 -13.759022 -13.58773 ]
+Selected action: RIGHT
+
+Step 81: Actions=['LEFT', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [27.494946 26.438076 27.540876 28.775856]
+Team Q: [-34.540543 -33.342327 -34.16138  -34.818386]
+Combined Q: [-3.5227985 -3.4521255 -3.3102522 -3.021265 ]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [17.107708 14.537461 17.291245 18.711445]
+Team Q: [-34.00106  -34.815216 -34.27903  -33.49258 ]
+Combined Q: [ -8.446676 -10.138878  -8.493893  -7.390568]
+Selected action: RIGHT
+
+Step 82: Actions=['RIGHT', 'RIGHT'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [32.879833 33.34245  32.624653 32.78264 ]
+Team Q: [-24.183462 -23.47591  -24.013395 -24.360397]
+Combined Q: [4.3481855 4.9332695 4.305629  4.2111206]
+Selected action: RIGHT
+
+Agent 1 Q-values:
+Individual Q: [28.529655 28.715738 28.12862  27.84241 ]
+Team Q: [-29.774176 -30.502092 -29.9207   -29.265081]
+Combined Q: [-0.6222601  -0.89317703 -0.89603996 -0.71133614]
+Selected action: NOOP
+
+Step 83: Actions=['RIGHT', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [29.700016 30.335371 29.30182  27.225079]
+Team Q: [-23.327637 -22.647161 -23.114073 -23.482649]
+Combined Q: [3.1861897 3.8441048 3.093874  1.8712149]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.515574 28.70243  28.113329 27.831432]
+Team Q: [-29.707317 -30.43455  -29.853676 -29.199785]
+Combined Q: [-0.5958719  -0.8660593  -0.87017345 -0.68417645]
+Selected action: NOOP
+
+Step 84: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [29.496239 30.134869 29.100298 27.030487]
+Team Q: [-23.289423 -22.609282 -23.075726 -23.443857]
+Combined Q: [3.1034079 3.7627935 3.0122862 1.7933149]
+Selected action: LEFT
+
+Agent 1 Q-values:
+Individual Q: [28.499708 28.686855 28.09689  27.818064]
+Team Q: [-29.644728 -30.37131  -29.790928 -29.13866 ]
+Combined Q: [-0.57250977 -0.842227   -0.8470192  -0.66029835]
+Selected action: NOOP
+
+Step 85: Actions=['LEFT', 'NOOP'], Rewards=[np.float64(-0.1), np.float64(-0.1)]
+
+Agent 0 Q-values:
+Individual Q: [32.354412 32.823776 32.097584 32.267303]
+Team Q: [-23.914665 -23.213585 -23.7444   -24.088327]
+Combined Q: [4.2198734 4.8050957 4.176592  4.089488 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.304342 28.493862 27.902466 27.622513]
+Team Q: [-29.333385 -30.054777 -29.478378 -28.83365 ]
+Combined Q: [-0.5145216  -0.7804575  -0.78795624 -0.6055689 ]
+Selected action: NOOP
+
+Step 86: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [32.06666  32.535873 31.810652 31.97096 ]
+Team Q: [-23.696196 -23.001135 -23.526278 -23.866816]
+Combined Q: [4.185233  4.7673693 4.142187  4.0520725]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [28.116688 28.307888 27.71607  27.435919]
+Team Q: [-29.043707 -29.760286 -29.187597 -28.549871]
+Combined Q: [-0.46350956 -0.72619915 -0.73576355 -0.5569763 ]
+Selected action: NOOP
+
+Step 87: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.790722 32.25951  31.535608 31.68721 ]
+Team Q: [-23.49383  -22.804306 -23.324282 -23.661598]
+Combined Q: [4.148446  4.727602  4.1056633 4.012806 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [27.936346 28.128891 27.53708  27.257034]
+Team Q: [-28.773829 -29.485949 -28.916712 -28.285522]
+Combined Q: [-0.41874123 -0.6785288  -0.6898155  -0.5142441 ]
+Selected action: NOOP
+
+Step 88: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.52393  31.991848 31.269897 31.413572]
+Team Q: [-23.30623  -22.62182  -23.137001 -23.471355]
+Combined Q: [4.1088495 4.685014  4.066448  3.9711084]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [27.762873 27.956558 27.36497  27.0851  ]
+Team Q: [-28.52207  -29.230042 -28.664051 -28.038988]
+Combined Q: [-0.37959862 -0.63674164 -0.6495409  -0.47694397]
+Selected action: NOOP
+
+Step 89: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.26893  31.73594  31.01594  31.152147]
+Team Q: [-23.132158 -22.45248  -22.96321  -23.29484 ]
+Combined Q: [4.068386  4.6417303 4.0263653 3.9286537]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [27.595821 27.790455 27.199286 26.919668]
+Team Q: [-28.286974 -28.99109  -28.428123 -27.80878 ]
+Combined Q: [-0.3455763  -0.60031796 -0.614419   -0.44455624]
+Selected action: NOOP
+
+Step 90: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(-1.0), np.float64(-1.0)]
+
+Agent 0 Q-values:
+Individual Q: [31.024889 31.49097  30.772913 30.902086]
+Team Q: [-22.970507 -22.295202 -22.801796 -23.130922]
+Combined Q: [4.027191  4.597884  3.9855585 3.885582 ]
+Selected action: FORWARD
+
+Agent 1 Q-values:
+Individual Q: [27.43478  27.630201 27.03962  26.760315]
+Team Q: [-28.070425 -28.771029 -28.210844 -27.59678 ]
+Combined Q: [-0.31782246 -0.5704136  -0.5856123  -0.41823292]
+Selected action: FORWARD
+
+Step 91: Actions=['FORWARD', 'FORWARD'], Rewards=[np.float64(-1.0), np.float64(10.0)]
+
+Agent 0 Q-values:
+Individual Q: [30.772682 31.239742 30.521639 30.643318]
+Team Q: [-22.804829 -22.133842 -22.636183 -22.962927]
+Combined Q: [3.9839268 4.55295   3.942728  3.8401957]
+Selected action: FORWARD
+
+Step 92: Actions=['FORWARD', 'NOOP'], Rewards=[np.float64(10.0), np.float64(0.0)]
+[LOG] Both agents reached goals. Initial positions: [(np.int64(5), np.int64(0)), (np.int64(2), np.int64(7))]
+Evaluation complete.
+Agent 0 total reward: -25.55
+Agent 1 total reward: -30.40
+Team reward: 40.70

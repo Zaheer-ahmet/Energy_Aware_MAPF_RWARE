@@ -1,0 +1,10 @@
+....gg....
+.xx.xx.xx.
+.xx.xx.xx.
+.xx.xx.xx.
+..........
+.xx.xx.xx.
+.xx.xx.xx.
+.xx.xx.xx.
+.x......x.
+....gg....

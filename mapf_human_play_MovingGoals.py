@@ -12,6 +12,10 @@ You can control the interaction with the following keys:
 - H: show help
 - D: display agent info (per step)
 - ESC: exit
+
+Custom layout example (with charging station):
+  python human_play.py --env rware-tiny-2ag-v2 --layout ".......\n..C....\n..x.x..\n.x...x.\n..x.x..\n...x...\n.g...g."
+  (Use 'C' for charging station, 'x' for shelf, 'g' for goal, '.' for empty)
 """
 from argparse import ArgumentParser
 import warnings
@@ -19,16 +23,31 @@ import warnings
 import numpy as np
 import gymnasium as gym
 
-from rware.warehouse import Action
+from rware.warehouse import Action, Warehouse, RewardType
+
+
+def load_layout_from_file(filename):
+    try:
+        with open(filename, 'r') as f:
+            return f.read()
+    except FileNotFoundError:
+        print(f"Error: Layout file '{filename}' not found.")
+        return None
 
 
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument(
-        "--env",
+        "--layout_file",
         type=str,
-        default="rware-tiny-2ag-v2",
-        help="Environment to use",
+        default="Layouts_for_MAPF/custom_layout.txt",
+        help="Path to the layout file to use.",
+    )
+    parser.add_argument(
+        "--n_agents",
+        type=int,
+        default=4,
+        help="Number of agents.",
     )
     parser.add_argument(
         "--max_steps",
@@ -49,29 +68,44 @@ class InteractiveRWAREEnv:
 
     def __init__(
         self,
-        env: str,
-        max_steps,
+        n_agents: int,
+        layout_file: str,
+        max_steps: int,
         display_info: bool = True,
     ):
-        self.env = gym.make(env, render_mode="human", max_steps=max_steps)
+        layout_str = load_layout_from_file(layout_file)
+        if layout_str is None:
+            exit(1)
+        self.env = Warehouse(
+            shelf_columns=1,
+            column_height=1,
+            shelf_rows=1,
+            n_agents=n_agents,
+            msg_bits=0,
+            sensor_range=1,
+            request_queue_size=1,
+            max_inactivity_steps=None,
+            max_steps=max_steps,
+            reward_type=RewardType.INDIVIDUAL,
+            layout=layout_str,
+            observation_type=None,
+            render_mode="human",
+        )
         self.n_agents = self.env.unwrapped.n_agents
         self.running = True
         self.current_agent_index = 0
         self.current_action = None
-
         self.t = 0
         self.ep_returns = np.zeros(self.n_agents)
         self.reset = False
-
         self.display_info = display_info
-
+        self._agent_accumulated_rewards = [0.0] * self.n_agents
+        self.env._agent_accumulated_rewards = self._agent_accumulated_rewards
         obss, _ = self.env.reset()
         self.env.render()
         self.env.unwrapped.renderer.window.on_key_press = self._key_press
-
         if self.display_info:
             self._display_info(obss, [0] * self.n_agents, False)
-
         self._cycle()
 
     def _help(self):
@@ -104,6 +138,7 @@ class InteractiveRWAREEnv:
         print(f"\tObs: {obss[self.current_agent_index]}")
         print(f"\tRew: {round(rews[self.current_agent_index], 3)}")
         print(f"\tDone: {done}")
+        print(f"\tAccumulated Rew: {self._agent_accumulated_rewards[self.current_agent_index]:.1f}")
         print()
 
     def _increment_current_agent_index(self, index: int):
@@ -157,7 +192,8 @@ class InteractiveRWAREEnv:
                 self.reset = False
                 self.ep_returns = np.zeros(self.n_agents)
                 self.t = 0
-
+                self._agent_accumulated_rewards = [0.0] * self.n_agents
+                self.env._agent_accumulated_rewards = self._agent_accumulated_rewards
                 if self.display_info:
                     self._display_info(obss, [0] * self.n_agents, False)
 
@@ -166,15 +202,15 @@ class InteractiveRWAREEnv:
                 actions[self.current_agent_index] = self.current_action
                 obss, rews, done, trunc, info = self.env.step([act.value for act in actions])
                 self.ep_returns += np.array(rews)
+                self._agent_accumulated_rewards[self.current_agent_index] += rews[self.current_agent_index]
                 self.t += 1
-
                 if self.display_info:
                     self._display_info(obss, rews, done or trunc)
-
                 if done or trunc:
                     self.reset = True
-
                 self.current_action = None
+            
+            self.env._agent_accumulated_rewards = self._agent_accumulated_rewards
             self.env.render()
         self.env.close()
 
@@ -182,4 +218,9 @@ class InteractiveRWAREEnv:
 
 if __name__ == "__main__":
     args = parse_args()
-    InteractiveRWAREEnv(env=args.env, max_steps=args.max_steps, display_info=args.display_info)
+    InteractiveRWAREEnv(
+        n_agents=args.n_agents,
+        layout_file=args.layout_file,
+        max_steps=args.max_steps,
+        display_info=args.display_info,
+    )

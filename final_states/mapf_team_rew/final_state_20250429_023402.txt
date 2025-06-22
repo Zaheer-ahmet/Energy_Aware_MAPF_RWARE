@@ -1,0 +1,8 @@
+Termination Step: 170
+Termination Reason: ESC pressed
+Team Reward: -17.00
+--------------------
+Agent 1: Final Pos=(9, 11), Accumulated Reward=73.00
+Agent 2: Final Pos=(23, 9), Accumulated Reward=53.00
+Agent 3: Final Pos=(5, 14), Accumulated Reward=33.00
+Agent 4: Final Pos=(30, 4), Accumulated Reward=33.00

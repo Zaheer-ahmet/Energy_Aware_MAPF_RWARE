@@ -1,0 +1,7 @@
+Termination Step: 200
+Termination Reason: Max steps reached
+--------------------
+Agent 1: Final Pos=(19, 11), Accumulated Reward=60.00
+Agent 2: Final Pos=(20, 18), Accumulated Reward=50.00
+Agent 3: Final Pos=(20, 1), Accumulated Reward=30.00
+Agent 4: Final Pos=(32, 17), Accumulated Reward=50.00

@@ -1,0 +1,146 @@
+Run ID: NoCharge_A2_O50_C0
+
+Episode 1:
+Steps taken: [9, 10]
+Recharges: [0, 0]
+Episode Duration: 10
+Individual Rewards: [9.2, 9.1]
+Team Reward: 48.0
+
+Episode 2:
+Steps taken: [8, 13]
+Recharges: [0, 0]
+Episode Duration: 13
+Individual Rewards: [8.399999999999999, 8.8]
+Team Reward: 95.39999999999996
+
+Episode 3:
+Steps taken: [15, 11]
+Recharges: [0, 0]
+Episode Duration: 15
+Individual Rewards: [8.6, 9.0]
+Team Reward: 142.39999999999992
+
+Episode 4:
+Steps taken: [15, 13]
+Recharges: [0, 0]
+Episode Duration: 15
+Individual Rewards: [8.6, 8.8]
+Team Reward: 189.4000000000001
+
+Episode 5:
+Steps taken: [3, 6]
+Recharges: [0, 0]
+Episode Duration: 6
+Individual Rewards: [9.8, 9.5]
+Team Reward: 238.20000000000016
+
+Episode 6:
+Steps taken: [14, 15]
+Recharges: [0, 0]
+Episode Duration: 15
+Individual Rewards: [7.799999999999999, 8.6]
+Team Reward: 285.20000000000033
+
+Episode 7:
+Steps taken: [3, 17]
+Recharges: [0, 0]
+Episode Duration: 17
+Individual Rewards: [9.8, 8.4]
+Team Reward: 331.8000000000005
+
+Episode 8:
+Steps taken: [13, 9]
+Recharges: [0, 0]
+Episode Duration: 13
+Individual Rewards: [6.999999999999999, 9.2]
+Team Reward: 379.20000000000067
+
+Episode 9:
+Steps taken: [10, 14]
+Recharges: [0, 0]
+Episode Duration: 14
+Individual Rewards: [7.299999999999999, 6.899999999999999]
+Team Reward: 426.40000000000083
+
+Episode 10:
+Steps taken: [13, 3]
+Recharges: [0, 0]
+Episode Duration: 13
+Individual Rewards: [8.8, 9.8]
+Team Reward: 473.800000000001
+
+Episode 11:
+Steps taken: [5, 7]
+Recharges: [0, 0]
+Episode Duration: 7
+Individual Rewards: [9.6, 9.4]
+Team Reward: 522.400000000001
+
+Episode 12:
+Steps taken: [12, 5]
+Recharges: [0, 0]
+Episode Duration: 12
+Individual Rewards: [8.9, 9.6]
+Team Reward: 570.0000000000005
+
+Episode 13:
+Steps taken: [9, 14]
+Recharges: [0, 0]
+Episode Duration: 14
+Individual Rewards: [9.2, 7.799999999999999]
+Team Reward: 617.1999999999998
+
+Episode 14:
+Steps taken: [1, 10]
+Recharges: [0, 0]
+Episode Duration: 10
+Individual Rewards: [10.0, 7.299999999999999]
+Team Reward: 665.1999999999994
+
+Episode 15:
+Steps taken: [8, 14]
+Recharges: [0, 0]
+Episode Duration: 14
+Individual Rewards: [8.399999999999999, 7.799999999999999]
+Team Reward: 712.3999999999987
+
+Episode 16:
+Steps taken: [21, 8]
+Recharges: [0, 0]
+Episode Duration: 21
+Individual Rewards: [8.0, 8.399999999999999]
+Team Reward: 758.1999999999978
+
+Episode 17:
+Steps taken: [22, 20]
+Recharges: [0, 0]
+Episode Duration: 22
+Individual Rewards: [7.8999999999999995, 7.199999999999998]
+Team Reward: 803.7999999999968
+
+Episode 18:
+Steps taken: [15, 19]
+Recharges: [0, 0]
+Episode Duration: 19
+Individual Rewards: [8.6, 6.399999999999999]
+Team Reward: 849.9999999999959
+
+Episode 19:
+Steps taken: [15, 6]
+Recharges: [0, 0]
+Episode Duration: 15
+Individual Rewards: [5.8999999999999995, 9.5]
+Team Reward: 896.9999999999952
+
+Episode 20:
+Steps taken: [6, 15]
+Recharges: [0, 0]
+Episode Duration: 15
+Individual Rewards: [8.6, 6.799999999999999]
+Team Reward: 943.9999999999945
+
+
+Total Accumulated Team Reward: 9949.999999999982
+Total Steps Taken: 280
+Total Number of Episodes: 20

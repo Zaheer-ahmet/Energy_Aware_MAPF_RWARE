@@ -1,0 +1,7 @@
+Termination Step: 38
+Termination Reason: All goals reached
+--------------------
+Agent 1: Final Pos=(34, 3), Accumulated Reward=6.20
+Agent 2: Final Pos=(26, 9), Accumulated Reward=6.30
+Agent 3: Final Pos=(7, 16), Accumulated Reward=8.70
+Agent 4: Final Pos=(12, 18), Accumulated Reward=6.90

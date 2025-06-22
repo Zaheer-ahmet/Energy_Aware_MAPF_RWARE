@@ -1,0 +1,5 @@
+step: 199
+agent_positions: [(np.int64(3), 0), (9, np.int64(1)), (np.int64(7), np.int64(5)), (np.int64(4), np.int64(1))]
+accumulated_rewards: [-20.000000000000014, -20.000000000000014, -20.000000000000014, -20.000000000000014]
+goals_reached_ever: [False, False, False, False]
+termination_reason: Max steps reached

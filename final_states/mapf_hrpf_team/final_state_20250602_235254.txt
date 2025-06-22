@@ -1,0 +1,8 @@
+Termination Step: 27
+Termination Reason: Team completion
+Team Reward: 47.30
+--------------------
+Agent 1: Final Pos=(29, 3), Accumulated Reward=-2.60
+Agent 2: Final Pos=(21, 9), Accumulated Reward=-0.50
+Agent 3: Final Pos=(4, 15), Accumulated Reward=-1.30
+Agent 4: Final Pos=(7, 17), Accumulated Reward=-1.00

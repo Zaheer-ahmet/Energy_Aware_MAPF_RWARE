@@ -1,0 +1,146 @@
+Run ID: Charge_A6_O10_C3_B50
+
+Episode 1:
+Steps taken: [12, 3, 9, 7, 20, 12]
+Recharges: [0, 0, 0, 0, 1, 0]
+Episode Duration: 20
+Individual Rewards: [8.9, 9.8, 7.3999999999999995, 9.4, 8.1, 8.9]
+Team Reward: 38.0
+
+Episode 2:
+Steps taken: [16, 8, 12, 2, 15, 7]
+Recharges: [0, 0, 1, 0, 1, 1]
+Episode Duration: 16
+Individual Rewards: [7.599999999999999, 9.3, 8.9, 9.9, 8.6, 9.4]
+Team Reward: 78.39999999999998
+
+Episode 3:
+Steps taken: [11, 9, 7, 7, 10, 12]
+Recharges: [0, 0, 0, 0, 1, 0]
+Episode Duration: 12
+Individual Rewards: [9.0, 9.2, 9.4, 9.4, 9.1, 8.9]
+Team Reward: 121.20000000000005
+
+Episode 4:
+Steps taken: [22, 8, 9, 8, 4, 25]
+Recharges: [1, 0, 1, 0, 0, 0]
+Episode Duration: 25
+Individual Rewards: [7.8999999999999995, 9.3, 9.2, 9.3, 9.7, 7.6]
+Team Reward: 156.2000000000002
+
+Episode 5:
+Steps taken: [18, 1, 7, 13, 14, 18]
+Recharges: [0, 0, 0, 1, 2, 0]
+Episode Duration: 18
+Individual Rewards: [8.299999999999999, 10.0, 9.4, 8.8, 8.7, 8.299999999999999]
+Team Reward: 195.4000000000003
+
+Episode 6:
+Steps taken: [11, 7, 5, 16, 12, 20]
+Recharges: [0, 0, 0, 1, 1, 0]
+Episode Duration: 20
+Individual Rewards: [9.0, 9.4, 9.6, 8.5, 8.9, 8.1]
+Team Reward: 233.4000000000004
+
+Episode 7:
+Steps taken: [16, 14, 2, 11, 11, 31]
+Recharges: [0, 0, 0, 0, 1, 1]
+Episode Duration: 31
+Individual Rewards: [8.5, 8.7, 9.9, 9.0, 9.0, 6.999999999999998]
+Team Reward: 264.8000000000006
+
+Episode 8:
+Steps taken: [24, 11, 4, 8, 17, 11]
+Recharges: [1, 0, 0, 0, 1, 1]
+Episode Duration: 24
+Individual Rewards: [7.699999999999999, 9.0, 9.7, 9.3, 8.4, 9.0]
+Team Reward: 300.4000000000003
+
+Episode 9:
+Steps taken: [11, 30, 7, 7, 18, 4]
+Recharges: [0, 1, 0, 0, 1, 0]
+Episode Duration: 30
+Individual Rewards: [9.0, 7.099999999999999, 9.4, 9.4, 8.299999999999999, 9.7]
+Team Reward: 332.39999999999964
+
+Episode 10:
+Steps taken: [22, 6, 3, 10, 23, 4]
+Recharges: [1, 0, 0, 0, 2, 0]
+Episode Duration: 23
+Individual Rewards: [7.8999999999999995, 9.5, 9.8, 9.1, 7.799999999999999, 9.7]
+Team Reward: 368.5999999999991
+
+Episode 11:
+Steps taken: [14, 3, 5, 8, 16, 10]
+Recharges: [0, 0, 0, 0, 1, 1]
+Episode Duration: 16
+Individual Rewards: [8.7, 9.8, 9.6, 9.3, 8.5, 9.1]
+Team Reward: 408.99999999999875
+
+Episode 12:
+Steps taken: [5, 14, 13, 6, 22, 7]
+Recharges: [0, 0, 0, 0, 1, 0]
+Episode Duration: 22
+Individual Rewards: [9.6, 7.799999999999999, 8.8, 9.5, 7.8999999999999995, 9.4]
+Team Reward: 445.79999999999825
+
+Episode 13:
+Steps taken: [14, 3, 11, 1, 9, 16]
+Recharges: [0, 0, 0, 0, 1, 0]
+Episode Duration: 16
+Individual Rewards: [8.7, 9.8, 9.0, 10.0, 9.2, 8.5]
+Team Reward: 486.1999999999979
+
+Episode 14:
+Steps taken: [10, 19, 19, 5, 7, 11]
+Recharges: [0, 0, 1, 0, 1, 0]
+Episode Duration: 19
+Individual Rewards: [9.1, 8.2, 8.2, 9.6, 9.4, 9.0]
+Team Reward: 524.7999999999975
+
+Episode 15:
+Steps taken: [14, 19, 8, 23, 19, 11]
+Recharges: [1, 0, 0, 1, 1, 0]
+Episode Duration: 23
+Individual Rewards: [8.7, 8.2, 9.3, 7.799999999999999, 8.2, 9.0]
+Team Reward: 560.9999999999969
+
+Episode 16:
+Steps taken: [15, 32, 11, 16, 11, 17]
+Recharges: [0, 1, 0, 1, 1, 1]
+Episode Duration: 32
+Individual Rewards: [8.6, 6.899999999999999, 9.0, 8.5, 9.0, 8.4]
+Team Reward: 591.7999999999962
+
+Episode 17:
+Steps taken: [12, 20, 3, 7, 21, 11]
+Recharges: [0, 1, 0, 0, 1, 0]
+Episode Duration: 21
+Individual Rewards: [8.9, 7.199999999999998, 9.8, 9.4, 8.0, 9.0]
+Team Reward: 629.1999999999957
+
+Episode 18:
+Steps taken: [10, 4, 2, 8, 13, 20]
+Recharges: [0, 0, 0, 0, 1, 1]
+Episode Duration: 20
+Individual Rewards: [9.1, 7.9, 9.9, 9.3, 8.8, 8.1]
+Team Reward: 667.1999999999953
+
+Episode 19:
+Steps taken: [22, 13, 5, 15, 5, 16]
+Recharges: [0, 0, 0, 1, 0, 1]
+Episode Duration: 22
+Individual Rewards: [7.8999999999999995, 8.8, 9.6, 8.6, 9.6, 8.5]
+Team Reward: 703.9999999999948
+
+Episode 20:
+Steps taken: [25, 4, 11, 3, 9, 19]
+Recharges: [1, 0, 0, 0, 1, 0]
+Episode Duration: 25
+Individual Rewards: [7.6, 9.7, 9.0, 9.8, 9.2, 8.2]
+Team Reward: 738.9999999999942
+
+
+Total Accumulated Team Reward: 7846.7999999999665
+Total Steps Taken: 435
+Total Number of Episodes: 20

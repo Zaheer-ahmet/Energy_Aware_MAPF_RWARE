@@ -1,0 +1,7 @@
+Termination Step: 13
+Termination Reason: ESC pressed
+--------------------
+Agent 1: Final Pos=(5, 9), Accumulated Reward=-1.30
+Agent 2: Final Pos=(6, 0), Accumulated Reward=-1.30
+Agent 3: Final Pos=(8, 4), Accumulated Reward=-1.30
+Agent 4: Final Pos=(3, 4), Accumulated Reward=-1.30

@@ -33,7 +33,6 @@ class Action(Enum):
     FORWARD = 1
     LEFT = 2
     RIGHT = 3
-    TOGGLE_LOAD = 4
 
 
 class Direction(Enum):
@@ -250,12 +249,12 @@ class Warehouse(gym.Env):
 
         self.goals: List[Tuple[int, int]] = []
 
+        self.n_agents = n_agents
         if not layout:
             self._make_layout_from_params(shelf_columns, shelf_rows, column_height)
         else:
             self._make_layout_from_str(layout)
 
-        self.n_agents = n_agents
         self.msg_bits = msg_bits
         self.sensor_range = sensor_range
         self.max_inactivity_steps: Optional[int] = max_inactivity_steps
@@ -368,6 +367,9 @@ class Warehouse(gym.Env):
                     self.highways[y, x] = 1  # Charging stations are accessible
 
         assert len(self.goals) >= 1, "At least one goal is required"
+        # New: Check that number of goals matches number of agents
+        if hasattr(self, 'n_agents') and len(self.goals) != self.n_agents:
+            raise ValueError(f"Number of goals in layout ({len(self.goals)}) does not match n_agents ({self.n_agents}). Please update the layout or n_agents.")
 
     def _use_image_obs(self, image_observation_layers, directional=True):
         """
@@ -552,67 +554,50 @@ class Warehouse(gym.Env):
             for layer_type in self.image_observation_layers:
                 if layer_type == ImageLayer.SHELVES:
                     layer = self.grid[_LAYER_SHELFS].copy().astype(np.float32)
-                    # set all occupied shelf cells to 1.0 (instead of shelf ID)
                     layer[layer > 0.0] = 1.0
-                    # print("SHELVES LAYER")
                 elif layer_type == ImageLayer.REQUESTS:
                     layer = np.zeros(self.grid_size, dtype=np.float32)
                     for requested_shelf in self.request_queue:
                         layer[requested_shelf.y, requested_shelf.x] = 1.0
-                    # print("REQUESTS LAYER")
                 elif layer_type == ImageLayer.AGENTS:
                     layer = self.grid[_LAYER_AGENTS].copy().astype(np.float32)
-                    # set all occupied agent cells to 1.0 (instead of agent ID)
                     layer[layer > 0.0] = 1.0
-                    # print("AGENTS LAYER")
                 elif layer_type == ImageLayer.AGENT_DIRECTION:
                     layer = np.zeros(self.grid_size, dtype=np.float32)
                     for ag in self.agents:
                         agent_direction = ag.dir.value + 1
                         layer[ag.x, ag.y] = float(agent_direction)
-                    # print("AGENT DIRECTIONS LAYER")
                 elif layer_type == ImageLayer.AGENT_LOAD:
                     layer = np.zeros(self.grid_size, dtype=np.float32)
                     for ag in self.agents:
                         if ag.carrying_shelf is not None:
                             layer[ag.x, ag.y] = 1.0
-                    # print("AGENT LOAD LAYER")
                 elif layer_type == ImageLayer.GOALS:
                     layer = np.zeros(self.grid_size, dtype=np.float32)
                     for goal_y, goal_x in self.goals:
-                        layer[goal_x, goal_y] = 1.0
-                    # print("GOALS LAYER")
+                        layer[goal_y, goal_x] = 1.0
                 elif layer_type == ImageLayer.ACCESSIBLE:
                     layer = np.ones(self.grid_size, dtype=np.float32)
                     for ag in self.agents:
                         layer[ag.y, ag.x] = 0.0
                 else:
                     raise ValueError(f"Unknown image layer type: {layer_type}")
-
-                # pad with 0s for out-of-map cells
                 layer = np.pad(layer, self.sensor_range, mode="constant")
                 layers.append(layer)
             self.global_layers = np.stack(layers)
-
-        # global information was generated --> get information for agent
+        # ... rest of function unchanged ...
         start_x = agent.y
         end_x = agent.y + 2 * self.sensor_range + 1
         start_y = agent.x
         end_y = agent.x + 2 * self.sensor_range + 1
         obs = self.global_layers[:, start_x:end_x, start_y:end_y]
-
         if self.image_observation_directional:
-            # rotate image to be in direction of agent
             if agent.dir == Direction.DOWN:
-                # rotate by 180 degrees (clockwise)
                 obs = np.rot90(obs, k=2, axes=(1, 2))
             elif agent.dir == Direction.LEFT:
-                # rotate by 90 degrees (clockwise)
                 obs = np.rot90(obs, k=3, axes=(1, 2))
             elif agent.dir == Direction.RIGHT:
-                # rotate by 270 degrees (clockwise)
                 obs = np.rot90(obs, k=1, axes=(1, 2))
-            # no rotation needed for UP direction
         return obs
 
     def _get_default_obs(self, agent):
@@ -824,199 +809,90 @@ class Warehouse(gym.Env):
 
         return tuple([self._make_obs(agent) for agent in self.agents]), self._get_info()
 
-    def step(
-        self, actions: List[Action]
-    ) -> Tuple[List[np.ndarray], List[float], bool, bool, Dict]:
-        assert len(actions) == len(self.agents)
-
-        for agent, action in zip(self.agents, actions):
-            if self.msg_bits > 0:
-                agent.req_action = Action(action[0])
-                agent.message[:] = action[1:]
-            else:
-                agent.req_action = Action(action)
-            # Increment step count for each agent
-            agent.step_count += 1
-            
-            # Update battery for movement and loading/unloading
-            if agent.req_action in [Action.FORWARD, Action.TOGGLE_LOAD]:
-                # Use 1.5x battery depletion if carrying a shelf and moving
-                depletion = 1.5 if (agent.carrying_shelf and agent.req_action == Action.FORWARD) else 1.0
-                agent.update_battery(depletion)
-            
-            # Check for recharge regardless of movement
-            for cs in getattr(self, 'charging_stations', []):
-                if agent.x == cs.x and agent.y == cs.y:
-                    agent.recharge_battery()
-
-        # stationary agents will certainly stay where they are
-        stationary_agents = [agent for agent in self.agents if agent.req_action != Action.FORWARD]
-
-        # forward agents will move only if they avoid collisions
-        forward_agents = [agent for agent in self.agents if agent.req_action == Action.FORWARD]
-
-        # Handle collisions
-        commited_agents = set()
-
-        G = nx.DiGraph()
-
-        for agent in forward_agents:
-            start = agent.x, agent.y
-            target = agent.req_location(self.grid_size)
-
-            if (
-                agent.carrying_shelf
-                and start != target
-                and self.grid[_LAYER_SHELFS, target[1], target[0]]
-                and not (
-                    self.grid[_LAYER_AGENTS, target[1], target[0]]
-                    and self.agents[
-                        self.grid[_LAYER_AGENTS, target[1], target[0]] - 1
-                    ].carrying_shelf
-                )
-            ):
-                # there's a standing shelf at the target location
-                # our agent is carrying a shelf so there's no way
-                # this movement can succeed. Cancel it.
-                agent.req_action = Action.NOOP
-                G.add_edge(start, start)
-            else:
-                G.add_edge(start, target)
-
-        wcomps = [G.subgraph(c).copy() for c in nx.weakly_connected_components(G)]
-
-        for comp in wcomps:
-            try:
-                # if we find a cycle in this component we have to
-                # commit all nodes in that cycle, and nothing else
-                cycle = nx.algorithms.find_cycle(comp)
-                if len(cycle) == 2:
-                    # we have a situation like this: [A] <-> [B]
-                    # which is physically impossible. so skip
-                    continue
-                for edge in cycle:
-                    start_node = edge[0]
-                    agent_id = self.grid[_LAYER_AGENTS, start_node[1], start_node[0]]
-                    if agent_id > 0:
-                        commited_agents.add(agent_id)
-            except nx.NetworkXNoCycle:
-                longest_path = nx.algorithms.dag_longest_path(comp)
-                for x, y in longest_path:
-                    agent_id = self.grid[_LAYER_AGENTS, y, x]
-                    if agent_id:
-                        commited_agents.add(agent_id)
-
-        commited_agents = set([self.agents[id_ - 1] for id_ in commited_agents])
-        failed_agents = set(forward_agents) - commited_agents  # Only check forward agents
-
-        for agent in failed_agents:
-            agent.req_action = Action.NOOP
-
-        rewards = np.zeros(self.n_agents)
-
-        # --- Original shelf delivery reward logic (leave unchanged for other reward types) ---
-
-        for agent in self.agents:
-            agent.prev_x, agent.prev_y = agent.x, agent.y
-
-            if agent.req_action == Action.FORWARD:
-                agent.x, agent.y = agent.req_location(self.grid_size)
-                if agent.carrying_shelf:
-                    agent.carrying_shelf.x, agent.carrying_shelf.y = agent.x, agent.y
-            elif agent.req_action in [Action.LEFT, Action.RIGHT]:
-                agent.dir = agent.req_direction()
-            elif agent.req_action == Action.TOGGLE_LOAD and not agent.carrying_shelf:
-                shelf_id = self.grid[_LAYER_SHELFS, agent.y, agent.x]
-                if shelf_id:
-                    agent.carrying_shelf = self.shelfs[shelf_id - 1]
-            elif agent.req_action == Action.TOGGLE_LOAD and agent.carrying_shelf:
-                if not self._is_highway(agent.x, agent.y):
-                    agent.carrying_shelf = None
-                    if agent.has_delivered and self.reward_type == RewardType.TWO_STAGE:
-                        rewards[agent.id - 1] += 0.5
-
-                    agent.has_delivered = False
-
-        # --- MAPF-style reward logic (AFTER position update) ---
-        if self.reward_type == RewardType.INDIVIDUAL:
-            for i, agent in enumerate(self.agents):
-                # Per-step penalty
-                rewards[i] -= 0.1
-                # Goal reward (MAPF: reaching assigned goal cell)
-                if (agent.x, agent.y) == self.goals[i]:
-                    rewards[i] += 10.0
-
-        # Dynamic goal relocation: if agent reaches its goal, move the goal to a new free cell
+    def step(self, actions):
+        # --- Custom movement/collision logic: block moves into agents/obstacles ---
+        DIRECTIONS = [Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT]
+        current_positions = {(agent.x, agent.y) for agent in self.agents}
+        obstacle_cells = set()
+        for y in range(self.grid_size[0]):
+            for x in range(self.grid_size[1]):
+                if not self._is_highway(x, y):
+                    obstacle_cells.add((x, y))
+        intended_positions = []
+        failed_move = [False] * len(self.agents)
         for i, agent in enumerate(self.agents):
-            if (agent.x, agent.y) == self.goals[i]:
-                # Find all free cells (not obstacles, not occupied by agents or goals)
-                free_cells = []
-                for y in range(self.grid_size[0]):
-                    for x in range(self.grid_size[1]):
-                        if self.grid[_LAYER_SHELFS, y, x] == 0 and \
-                           self.grid[_LAYER_AGENTS, y, x] == 0 and \
-                           (x, y) not in self.goals:
-                            free_cells.append((x, y))
-                if free_cells:
-                    new_goal = tuple(self.np_random.choice(free_cells))
-                    self.goals[i] = new_goal
-
-        self._recalc_grid()
-
-        shelf_delivered = False
-        for y, x in self.goals:
-            shelf_id = self.grid[_LAYER_SHELFS, x, y]
-            if not shelf_id:
-                continue
-            shelf = self.shelfs[shelf_id - 1]
-
-            if shelf not in self.request_queue:
-                continue
-            # a shelf was successfully delived.
-            shelf_delivered = True
-            # remove from queue and replace it
-            candidates = [s for s in self.shelfs if s not in self.request_queue]
-            new_request = self.np_random.choice(candidates)
-            self.request_queue[self.request_queue.index(shelf)] = new_request
-            # also reward the agents
-            if self.reward_type == RewardType.GLOBAL:
-                rewards += 1
-            elif self.reward_type == RewardType.INDIVIDUAL:
-                agent_id = self.grid[_LAYER_AGENTS, x, y]
-                rewards[agent_id - 1] += 1
-            elif self.reward_type == RewardType.TWO_STAGE:
-                agent_id = self.grid[_LAYER_AGENTS, x, y]
-                self.agents[agent_id - 1].has_delivered = True
-                rewards[agent_id - 1] += 0.5
-
-        if shelf_delivered:
-            self._cur_inactive_steps = 0
-        else:
-            self._cur_inactive_steps += 1
+            act = Action(actions[i])
+            # If agent has completed, force NOOP and prevent any movement/turn
+            if i in self.completed_agents:
+                act = Action.NOOP
+            agent.req_action = act
+            if act == Action.FORWARD:
+                next_x, next_y = agent.req_location(self.grid_size)
+            else:
+                next_x, next_y = agent.x, agent.y
+            intended_positions.append((next_x, next_y))
+        from collections import Counter
+        pos_counts = Counter(intended_positions)
+        for i, agent in enumerate(self.agents):
+            next_pos = intended_positions[i]
+            if (next_pos in obstacle_cells or
+                (next_pos in current_positions and next_pos != (agent.x, agent.y)) or
+                pos_counts[next_pos] > 1):
+                intended_positions[i] = (agent.x, agent.y)
+                failed_move[i] = True
+        for i, agent in enumerate(self.agents):
+            act = Action(actions[i])
+            # If agent has completed, force NOOP and prevent any movement/turn
+            if i in self.completed_agents:
+                act = Action.NOOP
+            agent.prev_x, agent.prev_y = agent.x, agent.y
+            agent.req_action = act
+            if act == Action.FORWARD:
+                agent.x, agent.y = intended_positions[i]
+            elif act == Action.LEFT:
+                idx = DIRECTIONS.index(agent.dir)
+                agent.dir = DIRECTIONS[(idx - 1) % 4]
+            elif act == Action.RIGHT:
+                idx = DIRECTIONS.index(agent.dir)
+                agent.dir = DIRECTIONS[(idx + 1) % 4]
+        # --- Reward assignment ---
+        rewards = np.zeros(self.n_agents)
+        for i, agent in enumerate(self.agents):
+            prev_dist = abs(agent.prev_x - self.goals[i][0]) + abs(agent.prev_y - self.goals[i][1])
+            curr_dist = abs(agent.x - self.goals[i][0]) + abs(agent.y - self.goals[i][1])
+            dist_reward = 0.05 if curr_dist < prev_dist else 0.0
+            if (agent.x, agent.y) == self.goals[i] and i not in self.completed_agents:
+                rewards[i] = 10.0
+                self.completed_agents.add(i)
+            elif i in self.completed_agents:
+                rewards[i] = 0.0
+            elif failed_move[i]:
+                rewards[i] = -1.0
+            else:
+                rewards[i] = -0.1 + dist_reward
+        # --- Team reward logic ---
+        if not self.team_completed:
+            self.team_reward += -0.1  # Per-step penalty
+            if len(self.completed_agents) == self.n_agents:
+                self.team_reward += 50.0
+                self.team_completed = True
+        # --- Episode termination ---
         self._cur_steps += 1
-
-        if (
-            self.max_inactivity_steps
-            and self._cur_inactive_steps >= self.max_inactivity_steps
-        ) or (self.max_steps and self._cur_steps >= self.max_steps):
-            done = True
-        else:
-            done = False
-        truncated = False
-
-        new_obs = tuple([self._make_obs(agent) for agent in self.agents])
-        info = self._get_info()
-        return new_obs, list(rewards), done, truncated, info
+        done = self.team_completed or (self._cur_steps >= self.max_steps)
+        info = {}
+        info['team_reward'] = self.team_reward
+        info['team_completed'] = self.team_completed
+        info['completed_agents'] = list(self.completed_agents)
+        obs = tuple([self._make_obs(agent) for agent in self.agents])
+        return obs, list(rewards), done, info
 
     def render(self):
+        if self.render_mode != 'human':
+            return  # Support headless mode
         if not self.renderer:
             from rware.rendering import Viewer
-
             self.renderer = Viewer(self.grid_size)
-
-        return self.renderer.render(
-            self, return_rgb_array=self.render_mode == "rgb_array"
-        )
+        return self.renderer.render(self, return_rgb_array=False)
 
     def close(self):
         if self.renderer:
@@ -1072,13 +948,14 @@ class Warehouse(gym.Env):
                 elif layer_type == ImageLayer.GOALS:
                     layer = np.zeros(self.grid_size, dtype=np.float32)
                     for goal_y, goal_x in self.goals:
-                        layer[goal_x, goal_y] = 1.0
+                        layer[goal_y, goal_x] = 1.0
                 elif layer_type == ImageLayer.ACCESSIBLE:
                     layer = np.ones(self.grid_size, dtype=np.float32)
                     for ag in self.agents:
                         layer[ag.y, ag.x] = 0.0
                 else:
                     raise ValueError(f"Unknown image layer type: {layer_type}")
+                layer = np.pad(layer, self.sensor_range, mode="constant")
                 layers.append(layer)
             self.global_image = np.stack(layers)
             if pad_to_shape is not None:
@@ -1101,6 +978,189 @@ class Warehouse(gym.Env):
                     constant_values=0,
                 )
         return self.global_image
+
+
+# --- HRPF Team Warehouse ---
+class HRPFTeamWarehouse(Warehouse):
+    def __init__(self, *args, **kwargs):
+        layout_path = kwargs.pop('layout_path', None)
+        super().__init__(*args, **kwargs)
+        self.completed_agents = set()
+        self.team_completed = False
+        self.team_reward = 0.0
+        self._initial_goals = None
+
+        # --- Infer observation space from a sample observation ---
+        import gymnasium as gym
+        import numpy as np
+
+        # Get a sample observation by resetting the environment
+        sample = self.reset()
+        if isinstance(sample, tuple):
+            sample_obs = sample[0]
+        else:
+            sample_obs = sample
+        if isinstance(sample_obs, (list, tuple)) and len(sample_obs) > 0:
+            obs_shape = sample_obs[0].shape
+            self.observation_space = gym.spaces.Tuple(
+                tuple([
+                    gym.spaces.Box(
+                        low=-np.inf,
+                        high=np.inf,
+                        shape=obs_shape,
+                        dtype=np.float32
+                    ) for _ in range(self.n_agents)
+                ])
+            )
+        else:
+            raise RuntimeError("Could not infer observation space: sample_obs is empty or not a list.")
+
+    def reset(self, **kwargs):
+        obs, info = super().reset(**kwargs)
+        self.completed_agents = set()
+        self.team_completed = False
+        self.team_reward = 0.0
+        self._initial_goals = list(self.goals)
+        return obs, info
+
+    def step(self, actions):
+        # --- Custom movement/collision logic: block moves into agents/obstacles ---
+        DIRECTIONS = [Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT]
+        current_positions = {(agent.x, agent.y) for agent in self.agents}
+        obstacle_cells = set()
+        for y in range(self.grid_size[0]):
+            for x in range(self.grid_size[1]):
+                if not self._is_highway(x, y):
+                    obstacle_cells.add((x, y))
+        intended_positions = []
+        failed_move = [False] * len(self.agents)
+        for i, agent in enumerate(self.agents):
+            act = Action(actions[i])
+            # If agent has completed, force NOOP and prevent any movement/turn
+            if i in self.completed_agents:
+                act = Action.NOOP
+            agent.req_action = act
+            if act == Action.FORWARD:
+                next_x, next_y = agent.req_location(self.grid_size)
+            else:
+                next_x, next_y = agent.x, agent.y
+            intended_positions.append((next_x, next_y))
+        from collections import Counter
+        pos_counts = Counter(intended_positions)
+        for i, agent in enumerate(self.agents):
+            next_pos = intended_positions[i]
+            if (next_pos in obstacle_cells or
+                (next_pos in current_positions and next_pos != (agent.x, agent.y)) or
+                pos_counts[next_pos] > 1):
+                intended_positions[i] = (agent.x, agent.y)
+                failed_move[i] = True
+        for i, agent in enumerate(self.agents):
+            act = Action(actions[i])
+            # If agent has completed, force NOOP and prevent any movement/turn
+            if i in self.completed_agents:
+                act = Action.NOOP
+            agent.prev_x, agent.prev_y = agent.x, agent.y
+            agent.req_action = act
+            if act == Action.FORWARD:
+                agent.x, agent.y = intended_positions[i]
+            elif act == Action.LEFT:
+                idx = DIRECTIONS.index(agent.dir)
+                agent.dir = DIRECTIONS[(idx - 1) % 4]
+            elif act == Action.RIGHT:
+                idx = DIRECTIONS.index(agent.dir)
+                agent.dir = DIRECTIONS[(idx + 1) % 4]
+        # --- Reward assignment ---
+        rewards = np.zeros(self.n_agents)
+        for i, agent in enumerate(self.agents):
+            prev_dist = abs(agent.prev_x - self._initial_goals[i][0]) + abs(agent.prev_y - self._initial_goals[i][1])
+            curr_dist = abs(agent.x - self._initial_goals[i][0]) + abs(agent.y - self._initial_goals[i][1])
+            dist_reward = 0.05 if curr_dist < prev_dist else 0.0
+            if (agent.x, agent.y) == self._initial_goals[i] and i not in self.completed_agents:
+                rewards[i] = 10.0
+                self.completed_agents.add(i)
+            elif i in self.completed_agents:
+                rewards[i] = 0.0
+            elif failed_move[i]:
+                rewards[i] = -1.0
+            else:
+                rewards[i] = -0.1 + dist_reward
+        # --- Team reward logic ---
+        if not self.team_completed:
+            self.team_reward += -0.1  # Per-step penalty
+            if len(self.completed_agents) == self.n_agents:
+                self.team_reward += 50.0
+                self.team_completed = True
+        # --- Episode termination ---
+        self._cur_steps += 1
+        done = self.team_completed or (self._cur_steps >= self.max_steps)
+        info = {}
+        info['team_reward'] = self.team_reward
+        info['team_completed'] = self.team_completed
+        info['completed_agents'] = list(self.completed_agents)
+        obs = tuple([self._make_obs(agent) for agent in self.agents])
+        return obs, list(rewards), done, info
+
+    def _make_img_obs(self, agent):
+        # write image observations
+        if agent.id == 1:
+            layers = []
+            # first agent's observation --> update global observation layers
+            for layer_type in self.image_observation_layers:
+                if layer_type == ImageLayer.SHELVES:
+                    layer = self.grid[_LAYER_SHELFS].copy().astype(np.float32)
+                    layer[layer > 0.0] = 1.0
+                elif layer_type == ImageLayer.REQUESTS:
+                    layer = np.zeros(self.grid_size, dtype=np.float32)
+                    for requested_shelf in self.request_queue:
+                        layer[requested_shelf.y, requested_shelf.x] = 1.0
+                elif layer_type == ImageLayer.AGENTS:
+                    layer = self.grid[_LAYER_AGENTS].copy().astype(np.float32)
+                    layer[layer > 0.0] = 1.0
+                elif layer_type == ImageLayer.AGENT_DIRECTION:
+                    layer = np.zeros(self.grid_size, dtype=np.float32)
+                    for ag in self.agents:
+                        agent_direction = ag.dir.value + 1
+                        layer[ag.x, ag.y] = float(agent_direction)
+                elif layer_type == ImageLayer.AGENT_LOAD:
+                    layer = np.zeros(self.grid_size, dtype=np.float32)
+                    for ag in self.agents:
+                        if ag.carrying_shelf is not None:
+                            layer[ag.x, ag.y] = 1.0
+                elif layer_type == ImageLayer.GOALS:
+                    layer = np.zeros(self.grid_size, dtype=np.float32)
+                    for goal_y, goal_x in self._initial_goals:
+                        layer[goal_y, goal_x] = 1.0
+                elif layer_type == ImageLayer.ACCESSIBLE:
+                    layer = np.ones(self.grid_size, dtype=np.float32)
+                    for ag in self.agents:
+                        layer[ag.y, ag.x] = 0.0
+                else:
+                    raise ValueError(f"Unknown image layer type: {layer_type}")
+                layer = np.pad(layer, self.sensor_range, mode="constant")
+                layers.append(layer)
+            self.global_layers = np.stack(layers)
+        # ... rest of function unchanged ...
+        start_x = agent.y
+        end_x = agent.y + 2 * self.sensor_range + 1
+        start_y = agent.x
+        end_y = agent.x + 2 * self.sensor_range + 1
+        obs = self.global_layers[:, start_x:end_x, start_y:end_y]
+        if self.image_observation_directional:
+            if agent.dir == Direction.DOWN:
+                obs = np.rot90(obs, k=2, axes=(1, 2))
+            elif agent.dir == Direction.LEFT:
+                obs = np.rot90(obs, k=3, axes=(1, 2))
+            elif agent.dir == Direction.RIGHT:
+                obs = np.rot90(obs, k=1, axes=(1, 2))
+        return obs
+
+    def render(self):
+        if self.render_mode != 'human':
+            return  # Support headless mode
+        if not self.renderer:
+            from rware.rendering import Viewer
+            self.renderer = Viewer(self.grid_size)
+        return self.renderer.render(self, return_rgb_array=False)
 
 
 if __name__ == "__main__":

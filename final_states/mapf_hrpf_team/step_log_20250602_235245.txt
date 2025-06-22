@@ -1,0 +1,162 @@
+Step 0: Team Reward=-0.10, Team Completed=False
+  Agent 1: Pos=(8,7), Accumulated Reward=-0.10
+  Agent 2: Pos=(24,8), Accumulated Reward=-0.10
+  Agent 3: Pos=(4,7), Accumulated Reward=-0.10
+  Agent 4: Pos=(8,9), Accumulated Reward=-0.10
+
+Step 1: Team Reward=-0.20, Team Completed=False
+  Agent 1: Pos=(8,6), Accumulated Reward=-0.20
+  Agent 2: Pos=(24,9), Accumulated Reward=-0.20
+  Agent 3: Pos=(3,7), Accumulated Reward=-0.20
+  Agent 4: Pos=(8,10), Accumulated Reward=-0.20
+
+Step 2: Team Reward=-0.30, Team Completed=False
+  Agent 1: Pos=(8,5), Accumulated Reward=-0.30
+  Agent 2: Pos=(24,9), Accumulated Reward=-0.30
+  Agent 3: Pos=(3,7), Accumulated Reward=-0.30
+  Agent 4: Pos=(8,11), Accumulated Reward=-0.30
+
+Step 3: Team Reward=-0.40, Team Completed=False
+  Agent 1: Pos=(8,4), Accumulated Reward=-0.40
+  Agent 2: Pos=(23,9), Accumulated Reward=-0.40
+  Agent 3: Pos=(3,8), Accumulated Reward=-0.40
+  Agent 4: Pos=(8,12), Accumulated Reward=-0.40
+
+Step 4: Team Reward=-0.50, Team Completed=False
+  Agent 1: Pos=(8,3), Accumulated Reward=-0.50
+  Agent 2: Pos=(22,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,9), Accumulated Reward=-0.50
+  Agent 4: Pos=(8,13), Accumulated Reward=-0.50
+
+Step 5: Team Reward=-0.60, Team Completed=False
+  Agent 1: Pos=(8,3), Accumulated Reward=-0.60
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,10), Accumulated Reward=-0.60
+  Agent 4: Pos=(8,14), Accumulated Reward=-0.60
+
+Step 6: Team Reward=-0.70, Team Completed=False
+  Agent 1: Pos=(9,3), Accumulated Reward=-0.70
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,11), Accumulated Reward=-0.70
+  Agent 4: Pos=(8,15), Accumulated Reward=-0.70
+
+Step 7: Team Reward=-0.80, Team Completed=False
+  Agent 1: Pos=(10,3), Accumulated Reward=-0.80
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,12), Accumulated Reward=-0.80
+  Agent 4: Pos=(8,16), Accumulated Reward=-0.80
+
+Step 8: Team Reward=-0.90, Team Completed=False
+  Agent 1: Pos=(11,3), Accumulated Reward=-0.90
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,13), Accumulated Reward=-0.90
+  Agent 4: Pos=(8,17), Accumulated Reward=-0.90
+
+Step 9: Team Reward=-1.00, Team Completed=False
+  Agent 1: Pos=(12,3), Accumulated Reward=-1.00
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,14), Accumulated Reward=-1.00
+  Agent 4: Pos=(8,17), Accumulated Reward=-1.00
+
+Step 10: Team Reward=-1.10, Team Completed=False
+  Agent 1: Pos=(13,3), Accumulated Reward=-1.10
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(3,14), Accumulated Reward=-1.10
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 11: Team Reward=-1.20, Team Completed=False
+  Agent 1: Pos=(14,3), Accumulated Reward=-1.20
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,14), Accumulated Reward=-1.20
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 12: Team Reward=-1.30, Team Completed=False
+  Agent 1: Pos=(15,3), Accumulated Reward=-1.30
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,14), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 13: Team Reward=-1.40, Team Completed=False
+  Agent 1: Pos=(16,3), Accumulated Reward=-1.40
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 14: Team Reward=-1.50, Team Completed=False
+  Agent 1: Pos=(17,3), Accumulated Reward=-1.50
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 15: Team Reward=-1.60, Team Completed=False
+  Agent 1: Pos=(18,3), Accumulated Reward=-1.60
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 16: Team Reward=-1.70, Team Completed=False
+  Agent 1: Pos=(19,3), Accumulated Reward=-1.70
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 17: Team Reward=-1.80, Team Completed=False
+  Agent 1: Pos=(20,3), Accumulated Reward=-1.80
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 18: Team Reward=-1.90, Team Completed=False
+  Agent 1: Pos=(21,3), Accumulated Reward=-1.90
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 19: Team Reward=-2.00, Team Completed=False
+  Agent 1: Pos=(22,3), Accumulated Reward=-2.00
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 20: Team Reward=-2.10, Team Completed=False
+  Agent 1: Pos=(23,3), Accumulated Reward=-2.10
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 21: Team Reward=-2.20, Team Completed=False
+  Agent 1: Pos=(24,3), Accumulated Reward=-2.20
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 22: Team Reward=-2.30, Team Completed=False
+  Agent 1: Pos=(25,3), Accumulated Reward=-2.30
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 23: Team Reward=-2.40, Team Completed=False
+  Agent 1: Pos=(26,3), Accumulated Reward=-2.40
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 24: Team Reward=-2.50, Team Completed=False
+  Agent 1: Pos=(27,3), Accumulated Reward=-2.50
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 25: Team Reward=-2.60, Team Completed=False
+  Agent 1: Pos=(28,3), Accumulated Reward=-2.60
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+
+Step 26: Team Reward=47.30, Team Completed=True
+  Agent 1: Pos=(29,3), Accumulated Reward=-2.60
+  Agent 2: Pos=(21,9), Accumulated Reward=-0.50
+  Agent 3: Pos=(4,15), Accumulated Reward=-1.30
+  Agent 4: Pos=(7,17), Accumulated Reward=-1.00
+

@@ -1,0 +1,5 @@
+step: 17
+agent_positions: [(np.int64(2), np.int64(6)), (np.int64(7), np.int64(7)), (np.int64(6), 9), (np.int64(9), np.int64(9))]
+accumulated_rewards: [9.4, 8.299999999999999, 8.8, 10.0]
+goals_reached_ever: [True, True, True, True]
+termination_reason: All goals reached

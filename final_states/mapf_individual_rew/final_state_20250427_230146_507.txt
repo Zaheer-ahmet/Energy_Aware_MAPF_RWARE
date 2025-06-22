@@ -1,0 +1,5 @@
+step: 25
+agent_positions: [(np.int64(4), 0), (np.int64(1), 0), (0, np.int64(5)), (np.int64(9), 0)]
+rewards: [-0.1, -0.1, -0.1, -0.1]
+goals_reached: [False, False, False, False]
+termination_reason: User quit

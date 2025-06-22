@@ -1,0 +1,70 @@
+Step 1:
+	Selected: Agent 1 (at row 6, col 6)
+	Obs: [5. 5. 0. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.1
+	Team Reward (cumulative): -0.1
+	Battery: 9
+Step 2:
+	Selected: Agent 1 (at row 6, col 6)
+	Obs: [5. 5. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.2
+	Team Reward (cumulative): -0.2
+	Battery: 9
+Step 3:
+	Selected: Agent 1 (at row 7, col 6)
+	Obs: [5. 6. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0.
+ 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.3
+	Team Reward (cumulative): -0.3
+	Battery: 8
+Step 4:
+	Selected: Agent 1 (at row 8, col 6)
+	Obs: [5. 7. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.4
+	Team Reward (cumulative): -0.4
+	Battery: 7
+Step 5:
+	Selected: Agent 1 (at row 9, col 6)
+	Obs: [5. 8. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.5
+	Team Reward (cumulative): -0.5
+	Battery: 6
+Step 6:
+	Selected: Agent 1 (at row 10, col 6)
+	Obs: [5. 9. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.6
+	Team Reward (cumulative): -0.6
+	Battery: 5
+Step 7:
+	Selected: Agent 1 (at row 10, col 6)
+	Obs: [5. 9. 0. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+ 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+	Rew: -0.1
+	Done: False
+	Accumulated Rew: -0.7
+	Team Reward (cumulative): -0.7
+	Battery: 5

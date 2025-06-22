@@ -1,0 +1,27 @@
+Run ID: test_3
+
+Episode 1:
+Steps taken: [22, 3, 17, 11]
+Recharges: [0, 0, 0, 0]
+Episode Duration: 22
+Individual Rewards: [7.8999999999999995, 9.8, 8.4, 9.0]
+Team Reward: 41.199999999999996
+
+Episode 2:
+Steps taken: [28, 14, 24, 9]
+Recharges: [1, 0, 1, 0]
+Episode Duration: 28
+Individual Rewards: [6.399999999999998, 8.7, 6.799999999999998, 9.2]
+Team Reward: 80.00000000000003
+
+Episode 3:
+Steps taken: [6, 17, 30, 32]
+Recharges: [0, 1, 1, 1]
+Episode Duration: 32
+Individual Rewards: [8.6, 6.599999999999999, 7.099999999999999, 6.899999999999999]
+Team Reward: 117.19999999999985
+
+
+Total Accumulated Team Reward: 238.39999999999986
+Total Steps Taken: 82
+Total Number of Episodes: 3
