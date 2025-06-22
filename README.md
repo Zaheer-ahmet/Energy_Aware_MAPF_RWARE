@@ -185,7 +185,7 @@ This will populate `Test_Results_Logs/` with all result files.
 
 ## Credits
 
-- **Project Author:** Ahmad Zahir RAHIMI - Uğur EDNİRLİK
+- **Project Author:** Ahmad Zahir RAHIMI - Uğur ENDİRLİK
 - **Core Environment:** [RWARE: Multi-Agent Robotic Warehouse Environment](https://github.com/semitable/robotic-warehouse)
 - **Repository:** [Energy_Aware_MAPF_RWARE](https://github.com/Zaheer-ahmet/Energy_Aware_MAPF_RWARE)
 
